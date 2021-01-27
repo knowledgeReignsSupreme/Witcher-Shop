@@ -23,3 +23,12 @@ exports.getProduct = asyncHandler(async (req, res, next) => {
 
   res.status(200).json({ success: true, data: product });
 });
+
+// desc     Get single product
+// route    GET /api/v1/products/top
+// access   Public
+exports.getTopProducts = asyncHandler(async (req, res, next) => {
+  const products = await Product.find({}).sort({ rating: -1 }).limit(3);
+
+  res.status(200).json({ success: true, data: res.advancedResults });
+});

@@ -6,9 +6,10 @@ const morgan = require('morgan');
 const connectDB = require('./config/db');
 const errorHandler = require('./middleware/error');
 
+dotenv.config();
+
 //Basic init
 const PORT = process.env.PORT || 5800;
-dotenv.config({ path: './config/config.env' });
 
 connectDB();
 
