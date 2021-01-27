@@ -1,0 +1,1187 @@
+[
+  {
+    "title": "Addan Deith",
+    "category": "silver-swords",
+    "type": "Silver sword",
+    "tier": "Relic",
+    "effects": [
+      "+10% Aard Sign intensity",
+      "+8% Axii Sign intensity",
+      "+22% Critical hit damage bonus",
+      "+3% Critical hit chance",
+      "+1% Chance to freeze"
+    ],
+    "countInStock": 13,
+    "price": 148,
+    "rating": 3.8,
+    "image": "silver-swords/addan-deith.jpeg",
+    "weight": 1.18
+  },
+
+  {
+    "title": "Anathema",
+    "category": "silver-swords",
+    "type": "Silver sword",
+    "tier": "Relic",
+    "effects": [
+      "+15% Aard Sign intensity",
+      "+8% Quen Sign intensity",
+      "+16% Critical hit damage bonus",
+      "10% Chance to cause burning"
+    ],
+    "countInStock": 6,
+    "price": 168,
+    "rating": 4.1,
+    "image": "silver-swords/anathema.jpeg",
+    "weight": 1.68
+  },
+
+  {
+    "title": "Bloodsword",
+    "category": "silver-swords",
+    "type": "Silver sword",
+    "tier": "Relic",
+    "effects": [
+      "+16% Critical hit damage bonus",
+      "+3% Critical hit chance",
+      "+9% Chance to cause bleeding",
+      "+2% Chance to dismember"
+    ],
+    "countInStock": 4,
+    "price": 94,
+    "rating": 3.2,
+    "image": "silver-swords/bloodsword.jpeg",
+    "weight": 2.01
+  },
+
+  {
+    "title": "Deithwen",
+    "category": "silver-swords",
+    "type": "Silver sword",
+    "tier": "Relic",
+    "effects": [
+      "+18 Frost damage",
+      "+1% Chance to freeze",
+      "+9% Chance to cause bleeding",
+      "+2% Chance to dismember"
+    ],
+    "countInStock": 4,
+    "price": 85,
+    "rating": 2.7,
+    "image": "silver-swords/deithwen.jpeg",
+    "weight": 2.66
+  },
+
+  {
+    "title": "Fate",
+    "category": "silver-swords",
+    "type": "Silver sword",
+    "tier": "Relic",
+    "effects": [
+      "+8% Igni Sign intensity",
+      "+10% Axii Sign intensity",
+      "+10% Chance to stagger"
+    ],
+    "countInStock": 9,
+    "price": 85,
+    "rating": 2.7,
+    "image": "silver-swords/deithwen.jpeg",
+    "weight": 2.66
+  },
+
+  {
+    "title": "Legendary Feline silver sword",
+    "category": "silver-swords",
+    "type": "Silver sword",
+    "tier": "Witcher Item",
+    "effects": [
+      "+20% Aard Sign intensity",
+      "+10% Critical hit chance",
+      "+15% Chance to cause bleeding",
+      "+10% Chance to dismember"
+    ],
+    "countInStock": 0,
+    "price": 3240,
+    "rating": 5,
+    "image": "silver-swords/legendary_feline.jpeg",
+    "weight": 1.18
+  },
+
+  {
+    "title": "Melltith",
+    "category": "silver-swords",
+    "type": "Silver sword",
+    "tier": "Magic",
+    "effects": [
+      "+10% Critical hit chance",
+      "+4% Igni Sign intensity",
+      "+4% Critical hit chance"
+    ],
+    "countInStock": 7,
+    "price": 1248,
+    "rating": 4.6,
+    "image": "silver-swords/melltith.jpeg",
+    "weight": 1.71
+  },
+
+  {
+    "title": "Gynvael Aedd",
+    "category": "silver-swords",
+    "type": "Silver sword",
+    "tier": "Relic",
+    "effects": [
+      "+8% Igni Sign intensity",
+      "+8% Chance to cause bleeding",
+      "+10% Bonus gold"
+    ],
+    "countInStock": 4,
+    "price": 450,
+    "rating": 3.8,
+    "image": "silver-swords/gynvael_aedd.jpeg",
+    "weight": 2.18
+  },
+
+  {
+    "title": "Maugrim",
+    "category": "silver-swords",
+    "type": "Silver sword",
+    "tier": "Relic",
+    "effects": ["+7% Quen Sign intensity", "+5% Yrden Sign intensity"],
+    "countInStock": 0,
+    "price": 380,
+    "rating": 3.9,
+    "image": "silver-swords/maugrim.jpeg",
+    "weight": 3.16
+  },
+
+  {
+    "title": "Rose of Shaerrawed",
+    "category": "silver-swords",
+    "type": "Silver sword",
+    "tier": "Relic",
+    "effects": [
+      "+8% Yrden Sign intensity",
+      "+8% Axii Sign intensity",
+      "+12% Chance to stagger"
+    ],
+    "countInStock": 11,
+    "price": 860,
+    "rating": 4.3,
+    "image": "silver-swords/rose_of_aelirenn.jpeg",
+    "weight": 2.16
+  },
+
+  {
+    "title": "Zireael",
+    "category": "silver-swords",
+    "type": "Silver sword",
+    "tier": "Relic",
+    "effects": [
+      "+25% Critical hit damage bonus",
+      "+5% Critical hit chance",
+      "+12% Chance to stagger"
+    ],
+    "countInStock": 1,
+    "price": 4300,
+    "rating": 5,
+    "image": "silver-swords/zireael.jpeg",
+    "weight": 2.26
+  },
+
+  {
+    "title": "The Tamer",
+    "category": "silver-swords",
+    "type": "Silver sword",
+    "tier": "Master",
+    "effects": [
+      "+75% Critical hit damage bonus",
+      "+3% Critical hit chance",
+      "+2% Chance to cause bleeding"
+    ],
+    "countInStock": 3,
+    "price": 1880,
+    "rating": 4.1,
+    "image": "silver-swords/the_tamer.jpeg",
+    "weight": 2.96
+  },
+
+  {
+    "title": "Ursine",
+    "category": "silver-swords",
+    "type": "Silver sword",
+    "tier": "Witcher Item",
+    "effects": [
+      "+5% Adrenaline Point gain",
+      "+5% Critical hit chance",
+      "+10% Chance to dismember"
+    ],
+    "countInStock": 6,
+    "price": 2150,
+    "rating": 4.8,
+    "image": "silver-swords/ursine.jpeg",
+    "weight": 2.29
+  },
+
+  {
+    "title": "Wolven",
+    "category": "silver-swords",
+    "type": "Silver sword",
+    "tier": "Witcher Item",
+    "effects": [
+      "+5% Sign intensity",
+      "+5% Adrenaline Point gain",
+      "+5% Chance to cause bleeding"
+    ],
+    "countInStock": 3,
+    "price": 1600,
+    "rating": 4.4,
+    "image": "silver-swords/wolven.jpeg",
+    "weight": 1.71
+  },
+
+  {
+    "title": "Zerrikanterment",
+    "category": "silver-swords",
+    "type": "Silver sword",
+    "tier": "Relic",
+    "effects": [
+      "+15% Aard Sign intensity",
+      "+12% Quen Sign intensity",
+      "+9% Axii Sign intensity",
+      "10% Chance to cause bleeding"
+    ],
+    "countInStock": 3,
+    "price": 1250,
+    "rating": 4.6,
+    "image": "silver-swords/zerrikanterment.jpeg",
+    "weight": 1.71
+  },
+
+  {
+    "title": "Weeper",
+    "category": "silver-swords",
+    "type": "Silver sword",
+    "tier": "Relic",
+    "effects": ["+75% Critical hit damage bonus", "+5% Chance to dismember"],
+    "countInStock": 6,
+    "price": 1999,
+    "rating": 4.5,
+    "image": "silver-swords/weeper.jpeg",
+    "weight": 3.66
+  },
+
+  {
+    "title": "Steiger",
+    "category": "silver-swords",
+    "type": "Silver sword",
+    "tier": "Magic",
+    "effects": [
+      "+75% Critical hit damage bonus",
+      "+5% Quen Sign intensity",
+      "+6% Critical hit damage bonus"
+    ],
+    "countInStock": 2,
+    "price": 3250,
+    "rating": 4.7,
+    "image": "silver-swords/steiger.jpeg",
+    "weight": 2.96
+  },
+
+  {
+    "title": "The Striga",
+    "category": "silver-swords",
+    "type": "Silver sword",
+    "tier": "Master",
+    "effects": [
+      "+50% Critical hit damage bonus",
+      "+4% Chance to cause bleeding",
+      "+5% Chance to cause bleeding"
+    ],
+    "countInStock": 2,
+    "price": 2200,
+    "rating": 4.0,
+    "image": "silver-swords/the_striga.jpeg",
+    "weight": 2.81
+  },
+
+  {
+    "title": "Wolf",
+    "category": "steel-swords",
+    "type": "Steel sword",
+    "tier": "Relic",
+    "effects": ["+80 Armor piercing", "+4% Chance to cause bleeding"],
+    "countInStock": 6,
+    "price": 850,
+    "rating": 3.4,
+    "image": "steel-swords/wolf.jpeg",
+    "weight": 1.96
+  },
+
+  {
+    "title": "Angivare",
+    "category": "steel-swords",
+    "type": "Steel sword",
+    "tier": "Magic",
+    "effects": [
+      "+38% Critical hit damage bonus",
+      "+5% Critical hit chance",
+      "+2% Chance to cause bleeding"
+    ],
+    "countInStock": 3,
+    "price": 1250,
+    "rating": 4.2,
+    "image": "steel-swords/angivare.jpeg",
+    "weight": 3.16
+  },
+
+  {
+    "title": "Bloed Aedd",
+    "category": "steel-swords",
+    "type": "Steel sword",
+    "tier": "Relic",
+    "effects": [
+      "+10% Yrden Sign intensity",
+      "+8% Critical hit damage bonus",
+      "+6% Chance to cause bleeding"
+    ],
+    "countInStock": 4,
+    "price": 600,
+    "rating": 3.9,
+    "image": "steel-swords/bloed_aedd.jpeg",
+    "weight": 2.73
+  },
+
+  {
+    "title": "Blade from the Bits",
+    "category": "steel-swords",
+    "type": "Steel sword",
+    "tier": "Magic",
+    "effects": ["+35 Armor piercing", "+3% Critical hit chance"],
+    "countInStock": 8,
+    "price": 460,
+    "rating": 3.4,
+    "image": "steel-swords/blade_from_the_bits.jpeg",
+    "weight": 2.21
+  },
+
+  {
+    "title": "Caroline",
+    "category": "steel-swords",
+    "type": "Steel sword",
+    "tier": "Relic",
+    "effects": [
+      "+8% Quen Sign intensity",
+      "+12% Axii Sign intensity",
+      "+16% Critical hit chance",
+      "+10% Chance to cause bleeding"
+    ],
+    "countInStock": 5,
+    "price": 999,
+    "rating": 4.6,
+    "image": "steel-swords/caroline.jpeg",
+    "weight": 3.13
+  },
+
+  {
+    "title": "Daystar",
+    "category": "steel-swords",
+    "type": "Steel sword",
+    "tier": "Relic",
+    "effects": ["+6% Fire damage", "+8% Chance to cause burning"],
+    "countInStock": 3,
+    "price": 460,
+    "rating": 3.8,
+    "image": "steel-swords/daystar.jpeg",
+    "weight": 3.13
+  },
+
+  {
+    "title": "Legendary Feline",
+    "category": "steel-swords",
+    "type": "Steel sword",
+    "tier": "Witcher Item",
+    "effects": ["+10% Critical hit chance", "+15% Chance to cause bleeding"],
+    "countInStock": 2,
+    "price": 1250,
+    "rating": 4.3,
+    "image": "steel-swords/legendary_feline.jpeg",
+    "weight": 2.18
+  },
+
+  {
+    "title": "Hope",
+    "category": "steel-swords",
+    "type": "Steel sword",
+    "tier": "Relic",
+    "effects": ["+8% Igni Sign intensity", "+6% Chance to dismember"],
+    "countInStock": 0,
+    "price": 680,
+    "rating": 4.6,
+    "image": "steel-swords/hope.jpeg",
+    "weight": 3.86
+  },
+
+  {
+    "title": "Legendary Viper",
+    "category": "steel-swords",
+    "type": "Steel sword",
+    "tier": "Witcher Item",
+    "effects": ["+5% Critical hit chance", "+15% Chance to poison"],
+    "countInStock": 2,
+    "price": 1999,
+    "rating": 4.8,
+    "image": "steel-swords/legendary_viper.jpeg",
+    "weight": 1.17
+  },
+
+  {
+    "title": "Inis",
+    "category": "steel-swords",
+    "type": "Steel sword",
+    "tier": "Relic",
+    "effects": [
+      "+45 Armor piercing",
+      "+3% Critical hit chance",
+      "+3% Chance to poison"
+    ],
+    "countInStock": 4,
+    "price": 1099,
+    "rating": 4.3,
+    "image": "steel-swords/inis.jpeg",
+    "weight": 3.86
+  },
+
+  {
+    "title": "Mahakaman",
+    "category": "steel-swords",
+    "type": "Steel sword",
+    "tier": "Magic",
+    "effects": ["+75% Critical hit damage bonus"],
+    "countInStock": 7,
+    "price": 1200,
+    "rating": 4.5,
+    "image": "steel-swords/mahakaman.jpeg",
+    "weight": 2.56
+  },
+
+  {
+    "title": "Silverton",
+    "category": "steel-swords",
+    "type": "Steel sword",
+    "tier": "Magic",
+    "effects": [
+      "+8% Critical hit damage bonus",
+      "+4% Chance to cause bleeding"
+    ],
+    "countInStock": 2,
+    "price": 2000,
+    "rating": 4.8,
+    "image": "steel-swords/novigraadan_longsword.jpeg",
+    "weight": 1.56
+  },
+
+  {
+    "title": "Dol Blathanna",
+    "category": "steel-swords",
+    "type": "Steel sword",
+    "tier": "Relic",
+    "effects": ["+15% Critical hit damage bonus"],
+    "countInStock": 6,
+    "price": 550,
+    "rating": 2.9,
+    "image": "steel-swords/blathana.jpeg",
+    "weight": 3.21
+  },
+
+  {
+    "title": "Mourner",
+    "category": "steel-swords",
+    "type": "Steel sword",
+    "tier": "Relic",
+    "effects": [
+      "+19 Armor piercing",
+      "+6% Yrden Sign intensity",
+      "+21% Critical hit damage bonus"
+    ],
+    "countInStock": 1,
+    "price": 2300,
+    "rating": 4.4,
+    "image": "steel-swords/mourner.jpeg",
+    "weight": 2.51
+  },
+
+  {
+    "title": "Tor Lara",
+    "category": "steel-swords",
+    "type": "Steel sword",
+    "tier": "Relic",
+    "effects": [
+      "+16% Aard Sign intensity",
+      "+7% Quen Sign intensity",
+      "+12% Chance to cause burning",
+      "+2% Chance for instant kill"
+    ],
+    "countInStock": 0,
+    "price": 1999,
+    "rating": 5,
+    "image": "steel-swords/tor_lara.jpeg",
+    "weight": 2.51
+  },
+
+  {
+    "title": "Ultimatum",
+    "category": "steel-swords",
+    "type": "Steel sword",
+    "tier": "Relic",
+    "effects": [
+      "+10% Igni Sign intensity",
+      "+18% Critical hit damage bonus",
+      "+4% Critical hit change",
+      "+3% Critical hit change"
+    ],
+    "countInStock": 3,
+    "price": 1600,
+    "rating": 4.6,
+    "image": "steel-swords/ultimatum.jpeg",
+    "weight": 2.43
+  },
+
+  {
+    "title": "Vicovaro blade",
+    "category": "steel-swords",
+    "type": "Steel sword",
+    "tier": "Common",
+    "effects": ["+37 Armor piercing", "9% critical hit damage bonus"],
+    "countInStock": 5,
+    "price": 599,
+    "rating": 3.6,
+    "image": "steel-swords/vicovaro_blade.jpeg",
+    "weight": 1.56
+  },
+
+  {
+    "title": "Novigrad longsword",
+    "category": "steel-swords",
+    "type": "Steel sword",
+    "tier": "Magic",
+    "effects": [
+      "+5% Igni Sign intensity",
+      "+4% Adrenaline Point gain",
+      "+9% Critical hit damage bonus",
+      "+35 Armor piercing"
+    ],
+    "countInStock": 0,
+    "price": 2000,
+    "rating": 4.8,
+    "image": "steel-swords/novigraadan_longsword.jpeg",
+    "weight": 2.36
+  },
+
+  {
+    "title": "Winter Blade",
+    "category": "steel-swords",
+    "type": "Steel sword",
+    "tier": "Relic",
+    "effects": ["+14 Frost damage", "+2% Chance to freeze"],
+    "countInStock": 0,
+    "price": 1499,
+    "rating": 4.5,
+    "image": "steel-swords/winter_blade.jpeg",
+    "weight": 4.16
+  },
+
+  {
+    "title": "Ursine",
+    "category": "armors",
+    "type": "Armor",
+    "armorType": "Heavy",
+    "tier": "Witcher Item",
+    "effects": [
+      "+5% Adrenaline Point gain",
+      "+5% Resistance to piercing damage",
+      "+5% Resistance to bludgeoning damage",
+      "+15% Resistance to slashing damage"
+    ],
+    "countInStock": 3,
+    "price": 3500,
+    "rating": 4.5,
+    "image": "armors/ursine.jpeg",
+    "weight": 4.19
+  },
+
+  {
+    "title": "Kaer Morhen",
+    "category": "armors",
+    "type": "Armor",
+    "armorType": "Medium",
+    "tier": "Common",
+    "effects": [
+      "+7% Resistance to bludgeoning damage",
+      "+10% Resistance to slashing damage",
+      "+10% Resistance to damage from monsters",
+      "+10% Resistance to elemental damage"
+    ],
+    "countInStock": 16,
+    "price": 499,
+    "rating": 3.6,
+    "image": "armors/kaer-morhen.jpeg",
+    "weight": 4.19
+  },
+
+  {
+    "title": "Angrenian Cuirass",
+    "category": "armors",
+    "type": "Armor",
+    "armorType": "Medium",
+    "tier": "Magic",
+    "effects": [
+      "+25% Resistance to piercing damage",
+      "+25% Resistance to bludgeoning damage",
+      "+35% Resistance to slashing damage"
+    ],
+    "countInStock": 4,
+    "price": 999,
+    "rating": 4.2,
+    "image": "armors/angernian_cuirass.jpeg",
+    "weight": 6.03
+  },
+
+  {
+    "title": "Ard Skellige Aketon",
+    "category": "armors",
+    "type": "Armor",
+    "armorType": "Light",
+    "tier": "Magic",
+    "effects": [
+      "+30% Resistance to bludgeoning damage",
+      "+30% Resistance to slashing damage"
+    ],
+    "countInStock": 6,
+    "price": 850,
+    "rating": 4.4,
+    "image": "armors/ard_skellig_aketon.jpeg",
+    "weight": 2.65
+  },
+
+  {
+    "title": "Belhaven Brigandine",
+    "category": "armors",
+    "type": "Armor",
+    "armorType": "Medium",
+    "tier": "Common",
+    "effects": [
+      "+15% Resistance to piercing damage",
+      "+20% Resistance to bludgeoning damage",
+      "+20% Resistance to slashing damage"
+    ],
+    "countInStock": 4,
+    "price": 799,
+    "rating": 3.6,
+    "image": "armors/belhaven_brigandine.jpeg",
+    "weight": 6.76
+  },
+
+  {
+    "title": "Cidarian Cavalry",
+    "category": "armors",
+    "type": "Armor",
+    "armorType": "Medium",
+    "tier": "Magic",
+    "effects": [
+      "+15% Resistance to piercing damage",
+      "+20% Resistance to bludgeoning damage",
+      "+30% Resistance to slashing damage"
+    ],
+    "countInStock": 0,
+    "price": 1250,
+    "rating": 4.9,
+    "image": "armors/cidarian_cavalry.jpeg",
+    "weight": 8.26
+  },
+
+  {
+    "title": "Legendary Feline",
+    "category": "armors",
+    "type": "Armor",
+    "armorType": "Light",
+    "tier": "Witcher Item",
+    "effects": [
+      "+22% Attack Power",
+      "+12% Resistance to piercing damage",
+      "+18% Resistance to slashing damage",
+      "+18% Resistance to damage from monsters",
+      "+46% Resistance to elemental damage"
+    ],
+    "countInStock": 1,
+    "price": 3860,
+    "rating": 5,
+    "image": "armors/legendary_feline.jpeg",
+    "weight": 6.12
+  },
+
+  {
+    "title": "Hindarsfjall",
+    "category": "armors",
+    "type": "Armor",
+    "armorType": "Heavy",
+    "tier": "Magic",
+    "effects": [
+      "+40% Resistance to piercing damage",
+      "+30% Resistance to bludgeoning damage",
+      "+45% Resistance to slashing damage"
+    ],
+    "countInStock": 7,
+    "price": 1799,
+    "rating": 4.2,
+    "image": "armors/hindarsfjall.jpeg",
+    "weight": 17.11
+  },
+
+  {
+    "title": "Great Sun",
+    "category": "armors",
+    "type": "Armor",
+    "armorType": "Heavy",
+    "tier": "Relic",
+    "effects": [
+      "20% Quen intensity",
+      "20% Quen intensity",
+      "30% bludgeoning resistance",
+      "45% slashing resistance",
+      "5% chance to deflect projectiles with Quen"
+    ],
+    "countInStock": 3,
+    "price": 2400,
+    "rating": 3.9,
+    "image": "armors/great_sun.jpeg",
+    "weight": 8.3
+  },
+
+  {
+    "title": "Mastercrafted Griffin",
+    "category": "armors",
+    "type": "Armor",
+    "armorType": "Medium",
+    "tier": "Witcher Item",
+    "effects": [
+      "+20% Sign intensity",
+      "+17% Resistance to piercing damage",
+      "+16% Resistance to bludgeoning damage",
+      "+22% Resistance to slashing damage",
+      "+30% Resistance to damage from monsters"
+    ],
+    "countInStock": 2,
+    "price": 3099,
+    "rating": 4.8,
+    "image": "armors/mastercrafted_griffin.jpeg",
+    "weight": 10.06
+  },
+
+  {
+    "title": "Skellige Gambeson",
+    "category": "armors",
+    "type": "Armor",
+    "armorType": "Light",
+    "tier": "Magic",
+    "effects": [
+      "+10% Resistance to piercing damage",
+      "+15% Resistance to bludgeoning damage",
+      "+15% Resistance to slashing damage"
+    ],
+    "countInStock": 9,
+    "price": 699,
+    "rating": 3.4,
+    "image": "armors/mastercrafted_griffin.jpeg",
+    "weight": 1.0
+  },
+
+  {
+    "title": "Undvik",
+    "category": "armors",
+    "type": "Armor",
+    "armorType": "Heavy",
+    "tier": "Relic",
+    "effects": [
+      "+35% Resistance to piercing damage",
+      "+35% Resistance to bludgeoning damage",
+      "+40% Resistance to slashing damage",
+      "+10% Resistance to damage from monsters",
+      "+10% Resistance to elemental damage"
+    ],
+    "countInStock": 2,
+    "price": 2499,
+    "rating": 4.0,
+    "image": "armors/undvik.jpeg",
+    "weight": 6.01
+  },
+
+  {
+    "title": "Wolven",
+    "category": "armors",
+    "type": "Armor",
+    "armorType": "Medium",
+    "tier": "Witcher Item",
+    "effects": [
+      "+5% Adrenaline Point gain",
+      "+5% Resistance to piercing damage",
+      "+5% Resistance to bludgeoning damage",
+      "+10% Resistance to slashing damage",
+      "+15% Resistance to damage from monsters"
+    ],
+    "countInStock": 0,
+    "price": 1800,
+    "rating": 3.0,
+    "image": "armors/wolven.jpeg",
+    "weight": 3.35
+  },
+
+  {
+    "title": "Zireael",
+    "category": "armors",
+    "type": "Armor",
+    "armorType": "Heavy",
+    "tier": "Relic",
+    "effects": [
+      "+40% Resistance to piercing damage",
+      "+30% Resistance to bludgeoning damage",
+      "+100% Resistance to Bleeding",
+      "+40% Resistance to slashing damage",
+      "+25% Resistance to damage from monsters"
+    ],
+    "countInStock": 1,
+    "price": 4999,
+    "rating": 5.0,
+    "image": "armors/zireael.jpeg",
+    "weight": 5.8
+  },
+
+  {
+    "title": "Spikeroog Aketon",
+    "category": "armors",
+    "type": "Armor",
+    "armorType": "Light",
+    "tier": "Magic",
+    "effects": [
+      "+10% Resistance to piercing damage",
+      "+15% Resistance to bludgeoning damage",
+      "+30% Resistance to slashing damage"
+    ],
+    "countInStock": 8,
+    "price": 1350,
+    "rating": 3.9,
+    "image": "armors/spikeroog_aketon.jpeg",
+    "weight": 1.82
+  },
+
+  {
+    "title": "Mahakaman",
+    "category": "armors",
+    "type": "Armor",
+    "armorType": "Heavy",
+    "tier": "Master",
+    "effects": [
+      "+25-28% Resistance to piercing damage",
+      "+25% Resistance to bludgeoning damage",
+      "+30% Resistance to slashing damage"
+    ],
+    "countInStock": 0,
+    "price": 2999,
+    "rating": 3.0,
+    "image": "armors/mahakaman.jpeg",
+    "weight": 15.34
+  },
+
+  {
+    "title": "Tesham Mutna",
+    "category": "armors",
+    "type": "Armor",
+    "armorType": "Heavy",
+    "tier": "Relic",
+    "effects": [
+      "+30% Resistance to piercing damage",
+      "+25% Resistance to bludgeoning damage",
+      "+25% Resistance to Bleeding",
+      "+30% Resistance to slashing damage",
+      "+25% Resistance to damage from monsters"
+    ],
+    "countInStock": 3,
+    "price": 2450,
+    "rating": 4.5,
+    "image": "armors/tesham_mutna.jpeg",
+    "weight": 8.48
+  },
+
+  {
+    "title": "Hen Gaidth",
+    "category": "armors",
+    "type": "Armor",
+    "armorType": "Heavy",
+    "tier": "Relic",
+    "effects": [
+      "+40% Resistance to piercing damage",
+      "+30% Resistance to bludgeoning damage",
+      "+25% Resistance to Bleeding",
+      "+35% Resistance to slashing damage",
+      "+35% Resistance to damage from monsters"
+    ],
+    "countInStock": 6,
+    "price": 1850,
+    "rating": 4.3,
+    "image": "armors/hen_gaidth.jpeg",
+    "weight": 8.48
+  },
+
+  {
+    "title": "Alghoul decoction",
+    "category": "potions",
+    "type": "Potion",
+    "tier": "Relic",
+    "duration": "30minutes",
+    "effects": ["50% Adrenaline Point gain"],
+    "countInStock": 300,
+    "price": 9,
+    "rating": 3.6,
+    "image": "potions/alghoul_decotion.jpeg",
+    "weight": 0
+  },
+
+  {
+    "title": "Nightwraith decoction",
+    "category": "potions",
+    "type": "Potion",
+    "tier": "Relic",
+    "duration": "30minutes",
+    "effects": ["+50 Vitality"],
+    "countInStock": 149,
+    "price": 13,
+    "rating": 4.4,
+    "image": "potions/nightwraith_decoction.jpeg",
+    "weight": 0
+  },
+
+  {
+    "title": "Black Blood",
+    "category": "potions",
+    "type": "Potion",
+    "tier": "Master",
+    "duration": "30seconds",
+    "effects": ["+15% Damage"],
+    "countInStock": 15,
+    "price": 26,
+    "rating": 4.9,
+    "image": "potions/nightwraith_decoction.jpeg",
+    "weight": 0
+  },
+
+  {
+    "title": "Blizzard",
+    "category": "potions",
+    "type": "Potion",
+    "tier": "Master",
+    "duration": "15seconds",
+    "effects": ["50% Time slowdown when slaying enemies"],
+    "countInStock": 431,
+    "price": 7,
+    "rating": 4.9,
+    "image": "potions/blizzard.jpeg",
+    "weight": 0
+  },
+
+  {
+    "title": "Superior Cat",
+    "category": "potions",
+    "type": "Potion",
+    "tier": "Relic",
+    "duration": "2minutes",
+    "effects": ["Grants sight in total darkness"],
+    "countInStock": 601,
+    "price": 180,
+    "rating": 5,
+    "image": "potions/superior_cat.jpeg",
+    "weight": 0
+  },
+
+  {
+    "title": "Enhanced Swallow",
+    "category": "potions",
+    "type": "Potion",
+    "tier": "Magic",
+    "duration": "20seconds",
+    "effects": [
+      "+100 Vitality regeneration",
+      "+65 Vitality regeneration during combat"
+    ],
+    "countInStock": 478,
+    "price": 42,
+    "rating": 4.3,
+    "image": "potions/enchanced_swallow.jpeg",
+    "weight": 0
+  },
+
+  {
+    "title": "Tawny Owl",
+    "category": "potions",
+    "type": "Potion",
+    "tier": "Master",
+    "duration": "30seconds",
+    "effects": ["5% Stamina regeneration in combat"],
+    "countInStock": 478,
+    "price": 84,
+    "rating": 3.9,
+    "image": "potions/tawny_owl.jpeg",
+    "weight": 0
+  },
+
+  {
+    "title": "Foglet decoction",
+    "category": "potions",
+    "type": "Potion",
+    "tier": "Relic",
+    "duration": "30minutes",
+    "effects": ["5% Stamina regeneration in combat"],
+    "countInStock": 82,
+    "price": 4,
+    "rating": 4.6,
+    "image": "potions/foglet_decoction.jpeg",
+    "weight": 0
+  },
+
+  {
+    "title": "Grave hag decoction",
+    "category": "potions",
+    "type": "Potion",
+    "tier": "Relic",
+    "duration": "30minutes",
+    "effects": ["Each foe slain regenerates 5 vitality"],
+    "countInStock": 58,
+    "price": 8,
+    "rating": 2.9,
+    "image": "potions/grave_hag_decoction.jpeg",
+    "weight": 0
+  },
+
+  {
+    "title": "Doppler decoction",
+    "category": "potions",
+    "type": "Potion",
+    "tier": "Relic",
+    "duration": "30minutes",
+    "effects": ["+50% critical damage on attacks from behind"],
+    "countInStock": 136,
+    "price": 17,
+    "rating": 4.5,
+    "image": "potions/doppler_decoction.jpeg",
+    "weight": 0
+  },
+
+  {
+    "title": "Full Moon",
+    "category": "potions",
+    "type": "Potion",
+    "tier": "Master",
+    "duration": "1minute",
+    "effects": ["+300 maximum vitality "],
+    "countInStock": 136,
+    "price": 67,
+    "rating": 5,
+    "image": "potions/full_moon.jpeg",
+    "weight": 0
+  },
+  {
+    "title": "Bear pheromones",
+    "category": "potions",
+    "type": "Potion",
+    "tier": "Master",
+    "duration": "1.5minutes",
+    "effects": ["Bears will not attack when postion is in effect"],
+    "countInStock": 72,
+    "price": 199,
+    "rating": 3.7,
+    "image": "potions/bear_pheromones.jpeg",
+    "weight": 0
+  },
+
+  {
+    "title": "Basilisk decoctions",
+    "category": "potions",
+    "type": "Potion",
+    "tier": "Relic",
+    "duration": "5minutes",
+    "effects": ["Buffs random signs at dusk and dawn"],
+    "countInStock": 26,
+    "price": 9,
+    "rating": 2.9,
+    "image": "potions/basilisk_decoction.jpeg",
+    "weight": 0
+  },
+
+  {
+    "title": "Killer Whale",
+    "category": "potions",
+    "type": "Potion",
+    "tier": "Relic",
+    "duration": "3minutes",
+    "effects": ["+50% Breath supply while underwater"],
+    "countInStock": 432,
+    "price": 18,
+    "rating": 5,
+    "image": "potions/killer_whale.jpeg",
+    "weight": 0
+  },
+
+  {
+    "title": "Enhanced Thunderbolt",
+    "category": "potions",
+    "type": "Potion",
+    "tier": "Magic",
+    "duration": "1minute",
+    "effects": ["+30% Attck power"],
+    "countInStock": 627,
+    "price": 99,
+    "rating": 5,
+    "image": "potions/enhanced_thunderbolt.jpeg",
+    "weight": 0
+  },
+
+  {
+    "title": "Golden Oriole",
+    "category": "potions",
+    "type": "Potion",
+    "tier": "Master",
+    "duration": "1minute",
+    "effects": ["Neutralizes the effects of poisons already in bloodstream"],
+    "countInStock": 460,
+    "price": 69,
+    "rating": 4.1,
+    "image": "potions/golden_oriole.jpeg",
+    "weight": 0
+  },
+
+  {
+    "title": "Petri's Philter",
+    "category": "potions",
+    "type": "Potion",
+    "tier": "Master",
+    "duration": "30seconds",
+    "effects": ["+15% Sign intensity"],
+    "countInStock": 6,
+    "price": 10,
+    "rating": 5,
+    "image": "potions/petris_philter.jpeg",
+    "weight": 0
+  },
+
+  {
+    "title": "Troll decoction",
+    "category": "potions",
+    "type": "Potion",
+    "tier": "Relic",
+    "duration": "30minutes",
+    "effects": ["+100 Vitality", "+120 Vitality during combat"],
+    "countInStock": 346,
+    "price": 4,
+    "rating": 3.8,
+    "image": "potions/troll_decoction.jpeg",
+    "weight": 0
+  }
+]
