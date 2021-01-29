@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const slugify = require('slugify');
 
 const ProductSchema = new mongoose.Schema(
   {
@@ -6,7 +7,7 @@ const ProductSchema = new mongoose.Schema(
       type: String,
       required: [true, 'Please provide a title'],
     },
-
+    slug: String,
     category: {
       type: String,
       required: [true, 'Please add a category'],
@@ -57,5 +58,10 @@ const ProductSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+
+ProductSchema.pre('save', function (next) {
+  this.slug = slugify(this.title, { lower: true });
+  next();
+});
 
 module.exports = mongoose.model('Product', ProductSchema);
