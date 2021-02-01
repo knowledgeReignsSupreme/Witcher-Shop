@@ -1,5 +1,5 @@
 import React from 'react';
-import { colorsVariables } from '../GlobalStyles';
+import { colorsVariables, GlobalPageInit } from '../GlobalStyles';
 import styled from 'styled-components';
 
 const Error = ({ message }) => {
@@ -11,11 +11,8 @@ const Error = ({ message }) => {
   );
 };
 
-const StyledError = styled.div`
+const StyledError = styled(GlobalPageInit)`
   background: ${colorsVariables.colorMainDark};
-  margin: 0 auto;
-  width: 60rem;
-  max-width: 90%;
   color: ${colorsVariables.colorWhite};
   text-align: center;
   p {

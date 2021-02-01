@@ -1,7 +1,11 @@
 import React from 'react';
 import { GlobalStyles } from './GlobalStyles';
 import Nav from './Common/Nav';
-import { BrowserRouter } from 'react-router-dom';
+import Footer from './Common/Footer';
+
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Home from './Home';
+import Shop from './Shop';
 
 function App() {
   return (
@@ -9,6 +13,12 @@ function App() {
       <BrowserRouter>
         <GlobalStyles />
         <Nav />
+        <Switch>
+          <Route path='/shop/:category?/:pageNumber?' component={Shop} />
+          <Route path='/shop' component={Shop} />
+          <Route path='/' exact component={Home} />
+        </Switch>
+        <Footer />
       </BrowserRouter>
     </div>
   );

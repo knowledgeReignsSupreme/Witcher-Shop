@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import useComponentVisible from '../Helper/useComponentVisible';
 import { FiShoppingCart } from 'react-icons/fi';
 import { FaBars, FaUser } from 'react-icons/fa';
-import logo from '../logo.png';
+import logo from '../images/logo.png';
 import Dropdown from './Dropdown';
 
 const Nav = () => {
@@ -15,20 +15,20 @@ const Nav = () => {
     setIsComponentVisible,
   } = useComponentVisible(false);
 
-  const toggleOnClick = () => {
-    setIsComponentVisible((prevOpen) => !prevOpen);
+  const toggleOnClick = (action) => {
+    setIsComponentVisible(action);
   };
 
   return (
     <div ref={ref}>
       <OutterNav>
         <StyledNav>
-          <StyledText onClick={toggleOnClick}>
+          <StyledText onClick={() => toggleOnClick(false)}>
             <Link to='/'>
               <h3>Witcher Shop</h3>
             </Link>
           </StyledText>
-          <Logo onClick={toggleOnClick}>
+          <Logo onClick={() => toggleOnClick(false)}>
             <Link to='/'>
               <img src={logo} alt='logo' />
             </Link>
@@ -36,7 +36,7 @@ const Nav = () => {
           <SecondaryNav>
             <FiShoppingCart />
             <FaUser />
-            <FaBars onClick={toggleOnClick} />
+            <FaBars onClick={() => toggleOnClick((prevOpen) => !prevOpen)} />
           </SecondaryNav>
         </StyledNav>
       </OutterNav>
@@ -71,7 +71,7 @@ const StyledNav = styled.nav`
   justify-content: space-between;
   margin: 0 auto;
   width: 1500px;
-  max-width: 95%;
+  max-width: 93%;
 
   color: ${colorsVariables.colorWhite};
 `;

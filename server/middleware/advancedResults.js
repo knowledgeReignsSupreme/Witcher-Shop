@@ -4,6 +4,10 @@ const advancedResults = (model, populate) => async (req, res, next) => {
   const reqQuery = { ...req.query };
 
   const removeFields = ['select', 'sort', 'page', 'limit'];
+  if (req.query.category === '') {
+    console.log('ya');
+    removeFields.push('category');
+  }
 
   removeFields.forEach((param) => delete reqQuery[param]);
 
@@ -25,14 +29,15 @@ const advancedResults = (model, populate) => async (req, res, next) => {
   //Sort
   if (req.query.sort) {
     const sortBy = req.query.sort.split(',').join(' ');
+
     query = query.sort(sortBy);
   } else {
-    query = query.sort('-createdAt');
+    query = query.sort('title');
   }
 
   //Pagination
   const page = parseInt(req.query.page, 10) || 1;
-  const limit = parseInt(req.query.limit, 10) || 25;
+  const limit = parseInt(req.query.limit, 10) || 12;
   const startIndex = (page - 1) * limit;
   const endIndex = page * limit;
   const total = await model.countDocuments();
@@ -42,6 +47,7 @@ const advancedResults = (model, populate) => async (req, res, next) => {
   if (populate) {
     query = query.populate(populate);
   }
+
   const results = await query;
 
   const pagination = {};

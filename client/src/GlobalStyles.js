@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 
 export const colorsVariables = {
   colorText: '#3a3939',
-  colorLink: '#3d3dfb',
+  colorLink: 'blue',
   colorMainDark: '#d81e2c',
   colorMainLight: '#ff0000',
   colorSecLight: '#414141',
@@ -90,6 +90,7 @@ export const GlobalPageInit = styled.main`
   width: 1500px;
   max-width: 95%;
   margin: 0 auto;
+  margin-top: 0.2rem;
 `;
 
 export const slideDown = keyframes`
