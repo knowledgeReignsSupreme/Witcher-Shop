@@ -14,12 +14,17 @@ const config = {
   },
 };
 
-export const getProducts = (pageNumber, category = '') => async (dispatch) => {
+export const getProducts = (
+  pageNumber,
+  category = '',
+  sort = '',
+  keyword = 'nokeyword'
+) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCTS_GET_REQUEST });
 
     const { data } = await axios.get(
-      `/api/v1/products?page=${pageNumber}&category=${category}`,
+      `/api/v1/products?page=${pageNumber}&category=${category}&sort=${sort}&keyword=${keyword}`,
       config
     );
 
@@ -34,7 +39,7 @@ export const getTopProducts = () => async (dispatch) => {
     dispatch({ type: TOP_PRODUCTS_GET_REQUEST });
 
     const { data } = await axios.get(
-      '/api/v1/products?sort=-rating&limit=3',
+      '/api/v1/products?sort=-rating&limit=3&keyword=nokeyword',
       config
     );
 

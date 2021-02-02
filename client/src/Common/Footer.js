@@ -22,6 +22,7 @@ const OutterFooter = styled.footer`
   height: 4rem;
   z-index: 3;
   background: ${colorsVariables.colorSecDark};
+  margin-top: 1rem;
 `;
 
 const StyledFooter = styled.div`

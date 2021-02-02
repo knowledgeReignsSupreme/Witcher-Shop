@@ -20,7 +20,7 @@ const Nav = () => {
   };
 
   return (
-    <div ref={ref}>
+    <Wrapper ref={ref}>
       <OutterNav>
         <StyledNav>
           <StyledText onClick={() => toggleOnClick(false)}>
@@ -34,8 +34,8 @@ const Nav = () => {
             </Link>
           </Logo>
           <SecondaryNav>
-            <FiShoppingCart />
-            <FaUser />
+            <FiShoppingCart onClick={() => toggleOnClick(false)} />
+            <FaUser onClick={() => toggleOnClick(false)} />
             <FaBars onClick={() => toggleOnClick((prevOpen) => !prevOpen)} />
           </SecondaryNav>
         </StyledNav>
@@ -46,12 +46,17 @@ const Nav = () => {
           toggleOnClick={toggleOnClick}
         />
       )}
-    </div>
+    </Wrapper>
   );
 };
 
-const OutterNav = styled.div`
+const Wrapper = styled.div`
   position: sticky;
+  top: 0;
+  z-index: 5;
+`;
+
+const OutterNav = styled.div`
   top: 0;
   width: 100%;
   height: 3rem;
@@ -72,7 +77,6 @@ const StyledNav = styled.nav`
   margin: 0 auto;
   width: 1500px;
   max-width: 93%;
-
   color: ${colorsVariables.colorWhite};
 `;
 

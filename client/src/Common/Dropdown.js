@@ -1,35 +1,35 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { colorsVariables, slideDown } from '../GlobalStyles';
-import { NavLink } from 'react-router-dom';
 
 const Dropdown = ({ setIsComponentVisible, toggleOnClick }) => {
   return (
     <OutterDropdown>
       <StyledDropdown>
-        <MainNav onClick={toggleOnClick}>
-          <NavLink to='/shop' exact>
+        <MainNav onClick={() => toggleOnClick(false)}>
+          <NavLink to='/shop/all/title/1' exact>
             <p>All products</p>
           </NavLink>
 
-          <NavLink to='/shop/silver-swords'>
+          <NavLink to='/shop/silver-swords/title/1'>
             <p>Silver swords</p>
           </NavLink>
 
-          <NavLink to='/shop/steel-swords'>
+          <NavLink to='/shop/steel-swords/title/1'>
             <p>Steel swords</p>
           </NavLink>
 
-          <NavLink to='/shop/armors'>
+          <NavLink to='/shop/armors/title/1'>
             <p>Armors</p>
           </NavLink>
 
-          <NavLink to='/shop/potions'>
+          <NavLink to='/shop/potions/title/1'>
             <p>Potions</p>
           </NavLink>
         </MainNav>
 
-        <SecNav onClick={toggleOnClick}>
+        <SecNav onClick={() => toggleOnClick(false)}>
           <NavLink to='/shop/register'>
             <p>Sign up</p>
           </NavLink>
@@ -47,6 +47,7 @@ const Dropdown = ({ setIsComponentVisible, toggleOnClick }) => {
 const OutterDropdown = styled.div`
   width: 100%;
   background: ${colorsVariables.colorSecDark};
+  z-index: 0;
 `;
 
 const StyledDropdown = styled.div`

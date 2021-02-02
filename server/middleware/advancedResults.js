@@ -4,11 +4,12 @@ const advancedResults = (model, populate) => async (req, res, next) => {
   const reqQuery = { ...req.query };
 
   const removeFields = ['select', 'sort', 'page', 'limit'];
-  if (req.query.category === '') {
-    console.log('ya');
+  if (req.query.category === '' || req.query.category === 'all') {
     removeFields.push('category');
   }
-
+  if (req.query.keyword === '' || req.query.keyword === 'nokeyword') {
+    removeFields.push('keyword');
+  }
   removeFields.forEach((param) => delete reqQuery[param]);
 
   //Add $ to the operators
@@ -18,7 +19,15 @@ const advancedResults = (model, populate) => async (req, res, next) => {
     (match) => `$${match}`
   );
 
-  query = model.find(JSON.parse(queryStr));
+  // query = model.find(JSON.parse(queryStr));
+  if (req.query.keyword !== 'nokeyword') {
+    query = model.find({
+      title: { $regex: req.query.keyword, $options: 'i' },
+      // ...JSON.parse(queryStr),
+    });
+  } else {
+    query = model.find(JSON.parse(queryStr));
+  }
 
   //Filter
   if (req.query.select) {
@@ -52,7 +61,30 @@ const advancedResults = (model, populate) => async (req, res, next) => {
 
   const pagination = {};
 
-  if (endIndex < total) {
+  let finalResultPages;
+  if (
+    !req.query.category ||
+    req.query.category === 'all' ||
+    req.query.category === ''
+  ) {
+    if (req.query.keyword !== 'nokeyword') {
+      finalResultPages = await model.countDocuments({
+        title: { $regex: req.query.keyword, $options: 'i' },
+      });
+    } else {
+      finalResultPages = await model.countDocuments();
+    }
+  } else {
+    finalResultPages = await model.countDocuments({
+      category: req.query.category,
+      title: { $regex: req.query.keyword, $options: 'i' },
+    });
+  }
+
+  const currentSearchTotalPages = finalResultPages / limit;
+  pagination.totalPages = Number(currentSearchTotalPages.toFixed(0));
+
+  if (endIndex < finalResultPages) {
     pagination.next = {
       page: page + 1,
       limit,

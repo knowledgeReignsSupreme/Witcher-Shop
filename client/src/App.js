@@ -14,7 +14,10 @@ function App() {
         <GlobalStyles />
         <Nav />
         <Switch>
-          <Route path='/shop/:category?/:pageNumber?' component={Shop} />
+          <Route
+            path='/shop/:category?/:sortMethod?/:keyword?/:pageNumber?'
+            component={Shop}
+          />
           <Route path='/shop' component={Shop} />
           <Route path='/' exact component={Home} />
         </Switch>
