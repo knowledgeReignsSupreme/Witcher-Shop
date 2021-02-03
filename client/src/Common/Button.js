@@ -2,7 +2,16 @@ import React from 'react';
 import { colorsVariables, cssVariables } from '../GlobalStyles';
 import styled from 'styled-components';
 
-const Button = ({ text, icon, handleClick, args, event, type, link }) => {
+const Button = ({
+  text,
+  icon,
+  handleClick,
+  args,
+  event,
+  type,
+  link,
+  disabled,
+}) => {
   return (
     <div>
       {event ? (
@@ -13,8 +22,8 @@ const Button = ({ text, icon, handleClick, args, event, type, link }) => {
         <StyledButton onClick={(e) => handleClick(...args)} type={type}>
           {icon && icon} {text && text}
         </StyledButton>
-      ) : link ? (
-        <StyledButton type={type}>
+      ) : link || disabled ? (
+        <StyledButton type={type} disabled={disabled}>
           {icon && icon} {text && text}
         </StyledButton>
       ) : (
@@ -32,7 +41,7 @@ const StyledButton = styled.button`
   background: ${(props) => props.type === 'transparent' && 'transparent'};
 
   color: ${(props) => props.type === 'black' && colorsVariables.colorMainDark};
-  color: ${(props) => props.type === 'red' && colorsVariables.colorSecDark};
+  color: ${(props) => props.type === 'red' && colorsVariables.colorWhite};
 
   box-shadow: ${(props) => props.type !== 'icon' && cssVariables.boxShadow};
   border: ${(props) =>

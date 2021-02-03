@@ -12,29 +12,29 @@ const BrowseGallery = () => {
     <StyledBrowse>
       <Heading>
         <h2>Browse</h2>
-        <a href='/shop/all/title/nokeyword/1'>Browse all &rarr;</a>
+        <a href='/shop/all/title/1'>Browse all &rarr;</a>
       </Heading>
       <Categories>
         <Category>
-          <Link to='/shop/silver-swords/title/nokeyword/1'>
+          <Link to='/shop/silver-swords/title/1'>
             <img src={silverSword} alt='silver sword' />
             <p>Silver swords</p>
           </Link>
         </Category>
         <Category>
-          <Link to='/shop/steel-swords/title/nokeyword/1'>
+          <Link to='/shop/steel-swords/title/1'>
             <img src={steelSword} alt='steel sword' />
             <p>Steel swords</p>
           </Link>
         </Category>
         <Category>
-          <Link to='/shop/armors/title/nokeyword/1'>
+          <Link to='/shop/armors/title/1'>
             <img src={armor} alt='armor' />
             <p>Armors</p>
           </Link>
         </Category>
         <Category>
-          <Link to='/shop/potions/title/nokeyword/1'>
+          <Link to='/shop/potions/title/1'>
             <img src={potions} alt='potions' />
             <p>Potions</p>
           </Link>

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { colorsVariables } from '../GlobalStyles';
 import Button from './Button';
 import Stars from './Stars';
@@ -7,21 +8,30 @@ import { FaCartPlus, FaCoins } from 'react-icons/fa';
 
 const ProductCard = ({ product }) => {
   return (
-    <StyledCard>
-      <Content>
-        <Header>
-          <img src={`/images/${product.image}`} alt='' />
-        </Header>
-        <Text>
-          <h3>{product.title} </h3>
-          <Stars rating={product.rating} />
-          <p>
-            {product.price} <FaCoins />
-          </p>
-          <Button text='Add to cart' type='red' icon={<FaCartPlus />} link />
-        </Text>
-      </Content>
-    </StyledCard>
+    <>
+      <Link to={`/product/${product.slug}/${product._id}`}>
+        <StyledCard>
+          <Content>
+            <Header>
+              <img src={`/images/${product.image}`} alt='' />
+            </Header>
+            <Text>
+              <h3>{product.title} </h3>
+              <Stars rating={product.rating} />
+              <p>
+                {product.price} <FaCoins />
+              </p>
+              <Button
+                text='Add to cart'
+                type='red'
+                icon={<FaCartPlus />}
+                link
+              />
+            </Text>
+          </Content>
+        </StyledCard>
+      </Link>
+    </>
   );
 };
 

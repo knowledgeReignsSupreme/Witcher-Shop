@@ -56,6 +56,10 @@ button {
     cursor: pointer;
 }
 
+button:disabled {
+  cursor:not-allowed;
+}
+
 &::-moz-focus-inner {
     border: 0;
     padding: 0;

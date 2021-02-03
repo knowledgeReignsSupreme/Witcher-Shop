@@ -6,6 +6,7 @@ import Footer from './Common/Footer';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './Home';
 import Shop from './Shop';
+import Product from './Product';
 
 function App() {
   return (
@@ -15,9 +16,16 @@ function App() {
         <Nav />
         <Switch>
           <Route
+            path='/shop/:category?/:sortMethod?/:pageNumber?'
+            component={Shop}
+            exact
+          />
+          <Route
             path='/shop/:category?/:sortMethod?/:keyword?/:pageNumber?'
             component={Shop}
+            exact
           />
+          <Route path='/product/:slug/:id' component={Product}></Route>
           <Route path='/shop' component={Shop} />
           <Route path='/' exact component={Home} />
         </Switch>

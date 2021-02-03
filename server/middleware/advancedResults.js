@@ -19,11 +19,9 @@ const advancedResults = (model, populate) => async (req, res, next) => {
     (match) => `$${match}`
   );
 
-  // query = model.find(JSON.parse(queryStr));
   if (req.query.keyword !== 'nokeyword') {
     query = model.find({
       title: { $regex: req.query.keyword, $options: 'i' },
-      // ...JSON.parse(queryStr),
     });
   } else {
     query = model.find(JSON.parse(queryStr));

@@ -11,7 +11,7 @@ const Header = () => {
       <StyledText>
         <h1>Witcher Shop</h1>
         <h4>Everything you need for the perfect hunt</h4>
-        <Link to='/shop/all/title/nokeyword/1'>
+        <Link to='/shop/all/title/1'>
           <Button text='Start Browsing' type='black' link />
         </Link>
       </StyledText>

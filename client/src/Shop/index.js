@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getProducts } from '../Redux/actions/productActions';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
-import { GlobalPageInit } from '../GlobalStyles';
+import { GlobalPageInit, colorsVariables } from '../GlobalStyles';
 import Loader from '../Common/Loader';
 import Error from '../Common/Error';
 import ProductCard from '../Common/ProductCard';
@@ -34,35 +34,46 @@ const Shop = ({ match }) => {
   }, [pageNumber]);
 
   const sortHandler = (e) => {
-    return (
-      history.push(
-        `/shop/${category}/${e.target.value}/${keyword}/${pageNumber}`
-      ),
-      [e.target.value]
-    );
+    //In Sort, the option in 'select' is the value
+    return keyword
+      ? history.push(
+          `/shop/${category}/${e.target.value}/${keyword}/${pageNumber}`
+        )
+      : history.push(`/shop/${category}/${e.target.value}/${pageNumber}`);
   };
 
   const searchHandler = (searchKeyword) => {
-    return (
-      history.push(`/shop/${category}/${sort}/${searchKeyword}/${pageNumber}`),
-      [searchKeyword]
-    );
+    if (searchKeyword.trim()) {
+      return history.push(
+        `/shop/${category}/${sort}/${searchKeyword}/${pageNumber}`
+      );
+    }
+  };
+
+  const resetKeyword = () => {
+    history.push(`/shop/${category}/${sort}/${pageNumber}`);
   };
 
   return (
     <>
       {isLoading && <Loader size={80} />}
-      {error && (
-        <Error message='There was a problem accessing these products' />
-      )}
+      {error && <Error message={error} />}
       {success && !isLoading && (
         <>
-          <Sort sortHandler={sortHandler} />
-          <Search
-            setSearchKeyword={setSearchKeyword}
-            searchHandler={searchHandler}
-            searchKeyword={searchKeyword}
-          />
+          <StyledResultsHandlers>
+            <Sort sortHandler={sortHandler} />
+            <Search
+              setSearchKeyword={setSearchKeyword}
+              searchKeyword={searchKeyword}
+              searchHandler={searchHandler}
+              resetKeyword={resetKeyword}
+            />
+            {keyword && (
+              <p>
+                Search keyword: <span>{keyword}</span>
+              </p>
+            )}
+          </StyledResultsHandlers>
           <StyledShop>
             {products.data.map((product) => (
               <ProductCard product={product} key={product._id} />
@@ -70,7 +81,7 @@ const Shop = ({ match }) => {
           </StyledShop>
           <Pagination
             pages={products?.pagination?.totalPages}
-            category={category || 'all'}
+            category={category}
             sort={sort}
             keyword={keyword}
           />
@@ -88,6 +99,23 @@ const StyledShop = styled(GlobalPageInit)`
 
   div {
     width: 100%;
+  }
+`;
+
+const StyledResultsHandlers = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1rem auto;
+
+  p {
+    font-weight: bold;
+    margin-top: 0.5rem;
+
+    span {
+      color: ${colorsVariables.colorMainDark};
+    }
   }
 `;
 
