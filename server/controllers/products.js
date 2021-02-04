@@ -55,7 +55,7 @@ exports.getRelatedProduct = asyncHandler(async (req, res, next) => {
   })
     .skip(random)
     .limit(3)
-    .select('rating title price image slug category');
+    .select('rating title price image slug category countInStock');
 
   if (!relatedProducts) {
     return next(
@@ -70,12 +70,14 @@ exports.getRelatedProduct = asyncHandler(async (req, res, next) => {
 // route    GET /api/v1/products/top
 // access   Public
 exports.getTopProducts = asyncHandler(async (req, res, next) => {
-  const products = await Product.find({}).sort({ rating: -1 }).limit(3);
+  const products = await Product.find({ countInStock: { $gte: 1 } })
+    .sort({ rating: -1 })
+    .limit(3);
 
   if (!products) {
     return next(
       new ErrorResponse(`There was a problem fetching top products`, 500)
     );
   }
-  res.status(200).json({ success: true, data: res.advancedResults });
+  res.status(200).json({ success: true, data: products });
 });

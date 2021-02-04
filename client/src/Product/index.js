@@ -1,21 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {
-  getProduct,
-  getRelatedProducts,
-} from '../Redux/actions/productActions';
+import { getProduct, getRelatedProducts } from '../Redux/Products/actions';
+import { v4 as uuidv4 } from 'uuid';
 import styled from 'styled-components';
 import { GlobalPageInit } from '../GlobalStyles';
 import Button from '../Common/Button';
 import Loader from '../Common/Loader';
 import Error from '../Common/Error';
 import Stars from '../Common/Stars';
-import { FaCartPlus } from 'react-icons/fa';
-import { v4 as uuidv4 } from 'uuid';
+import Carousel from '../Common/Carousel';
+import AddToCartButton from '../Common/addToCartButton';
 
 const Product = ({ match }) => {
   const productId = match.params.id;
   const dispatch = useDispatch();
+
+  const [quantity, setQuantity] = useState(1);
 
   const product = useSelector((state) => state.product);
   const { currentProduct, isLoading, error, success } = product;
@@ -24,22 +24,23 @@ const Product = ({ match }) => {
   const {
     relatedProducts,
     isLoading: loadingRelatedProducts,
-    success: successRelatedProducts,
     error: errorRelatedProducts,
   } = related;
 
   useEffect(() => {
-    if (!success) {
-      dispatch(getProduct(productId));
-      dispatch(getRelatedProducts(productId));
-    }
+    dispatch(getProduct(productId));
+    dispatch(getRelatedProducts(productId));
   }, [dispatch, productId]);
+
+  const quantityHandler = (e) => {
+    setQuantity((prevQuantity) => e.target.value);
+  };
 
   return (
     <StyledProduct>
-      {isLoading && <Loader size={80} />}
+      {isLoading && <Loader size={80} message='Loading product...' />}
       {error && <Error message={error} />}
-      {success && !isLoading && (
+      {success && !isLoading && !error && (
         <StyledProductInfo>
           <Image>
             <img
@@ -67,8 +68,10 @@ const Product = ({ match }) => {
               <li key={uuidv4()}>{effect}</li>
             ))}
             <CTAWrapper>
-              <select name='quantity' id=''>
-                <option value='1'>Select quantity:</option>
+              <select name='quantity' onChange={quantityHandler} id=''>
+                <option value='1' defaultValue>
+                  Select quantity:
+                </option>
                 {[...Array(currentProduct.countInStock).keys()].map((num) => (
                   <option key={uuidv4()} value={num + 1}>
                     {num + 1}
@@ -76,12 +79,9 @@ const Product = ({ match }) => {
                 ))}
               </select>
               {currentProduct.countInStock > 0 ? (
-                <Button
-                  text='Add to cart'
-                  icon={<FaCartPlus />}
-                  type='red'
-                  args={['hey']}
-                  handleClick={console.log}
+                <AddToCartButton
+                  currentProduct={currentProduct}
+                  quantity={quantity || 1}
                 />
               ) : (
                 <Button text='Out of stock' type='red' disabled />
@@ -89,6 +89,21 @@ const Product = ({ match }) => {
             </CTAWrapper>
           </Text>
         </StyledProductInfo>
+      )}
+      {errorRelatedProducts ? (
+        <Error message={errorRelatedProducts} />
+      ) : loadingRelatedProducts ? (
+        <>
+          <Loader size={80} message='Loading related prdocuts...' />
+        </>
+      ) : (
+        relatedProducts &&
+        !loadingRelatedProducts && (
+          <>
+            <h2 style={{ textAlign: 'center' }}>Related products:</h2>
+            <Carousel items={relatedProducts} />
+          </>
+        )
       )}
     </StyledProduct>
   );
@@ -101,7 +116,7 @@ const StyledProductInfo = styled.div`
   width: 40rem;
   max-width: 100%;
   margin: 0 auto;
-
+  margin-bottom: 1rem;
   @media (min-width: 600px) {
     justify-content: center;
   }
@@ -116,6 +131,7 @@ const Image = styled.div`
   @media (min-width: 600px) {
     img {
       height: 30rem;
+      width: 45rem;
     }
   }
 `;
@@ -151,9 +167,10 @@ const Text = styled.div`
 
 const CTAWrapper = styled.div`
   display: flex;
-  margin-top: 0.5rem;
   justify-content: space-between;
   flex-direction: column;
+  margin-top: 0.5rem;
+
   select {
     margin-bottom: 0.5rem;
     font-size: 0.8rem;

@@ -11,14 +11,8 @@ import {
   TOP_PRODUCTS_GET_REQUEST,
   TOP_PRODUCTS_GET_SUCCESS,
   TOP_PRODUCTS_GET_FAIL,
-} from '../consts';
+} from './constants';
 import axios from 'axios';
-
-const config = {
-  headers: {
-    'Content-Type': 'application/json',
-  },
-};
 
 export const getProducts = (
   pageNumber,
@@ -30,8 +24,7 @@ export const getProducts = (
     dispatch({ type: PRODUCTS_GET_REQUEST });
 
     const { data } = await axios.get(
-      `/api/v1/products?page=${pageNumber}&category=${category}&sort=${sort}&keyword=${keyword}`,
-      config
+      `/api/v1/products?page=${pageNumber}&category=${category}&sort=${sort}&keyword=${keyword}`
     );
 
     dispatch({ type: PRODUCTS_GET_SUCCESS, payload: data });
@@ -49,7 +42,7 @@ export const getProduct = (productId) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_GET_REQUEST });
 
-    const { data } = await axios.get(`/api/v1/products/${productId}`, config);
+    const { data } = await axios.get(`/api/v1/products/${productId}`);
 
     dispatch({ type: PRODUCT_GET_SUCCESS, payload: data });
   } catch (error) {
@@ -66,10 +59,7 @@ export const getRelatedProducts = (productId) => async (dispatch) => {
   try {
     dispatch({ type: RELATED_PRODUCTS_GET_REQUEST });
 
-    const { data } = await axios.get(
-      `/api/v1/products/${productId}/related`,
-      config
-    );
+    const { data } = await axios.get(`/api/v1/products/${productId}/related`);
 
     dispatch({ type: RELATED_PRODUCTS_GET_SUCCESS, payload: data });
   } catch (error) {
@@ -86,10 +76,7 @@ export const getTopProducts = () => async (dispatch) => {
   try {
     dispatch({ type: TOP_PRODUCTS_GET_REQUEST });
 
-    const { data } = await axios.get(
-      '/api/v1/products?sort=-rating&limit=3&keyword=nokeyword',
-      config
-    );
+    const { data } = await axios.get('/api/v1/products/topproducts');
 
     dispatch({ type: TOP_PRODUCTS_GET_SUCCESS, payload: data });
   } catch (error) {

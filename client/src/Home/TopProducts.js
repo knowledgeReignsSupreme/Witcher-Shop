@@ -8,7 +8,7 @@ const TopProducts = ({ products, success, isLoading, error }) => {
   return (
     <StyledTopProducts>
       <h2>Top products</h2>
-      {isLoading && <Loader size={60} />}
+      {isLoading && <Loader size={60} message='Loading top products...' />}
       {success && <Carousel items={products} />}
       {error && (
         <Error message='There was a problem showing the top products' />

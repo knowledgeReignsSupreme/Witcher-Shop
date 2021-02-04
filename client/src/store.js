@@ -6,16 +6,25 @@ import {
   productReducer,
   relatedProductsReducer,
   topProductsReducer,
-} from './Redux/reducers/productsReducer';
+} from './Redux/Products/reducers';
+import { cartReducer } from './Redux/Cart/reducers';
 
 const combinedReducers = combineReducers({
   products: productsReducer,
   product: productReducer,
   related: relatedProductsReducer,
   topProducts: topProductsReducer,
+  cart: cartReducer,
 });
 
-const initialState = {};
+const cartItemsFromStotage = localStorage.getItem('cartItems')
+  ? JSON.parse(localStorage.getItem('cartItems'))
+  : [];
+
+const initialState = {
+  cart: { cartItems: cartItemsFromStotage },
+};
+
 const middleware = [thunk];
 const store = createStore(
   combinedReducers,

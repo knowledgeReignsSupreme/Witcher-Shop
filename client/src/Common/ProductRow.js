@@ -1,0 +1,68 @@
+import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import styled from 'styled-components';
+import { cssVariables } from '../GlobalStyles';
+import { FaTrash, FaCoins } from 'react-icons/fa';
+import Button from './Button';
+
+const ProductRow = ({ product, usage }) => {
+  return (
+    <StyledRow>
+      <Header>
+        <img src={`/images/${product.image}`} alt='' />
+      </Header>
+      <Text>
+        <h3>{product.title}</h3>
+        <p>
+          {product.price * product.quantity} <FaCoins />
+        </p>
+        <p>In cart: {product.quantity}</p>
+      </Text>
+      {usage === 'cart' && (
+        <Actions>
+          <p>Quantity:</p>
+          <select name='' id='' defaultValue={product.quantity}>
+            {[...Array(product.countInStock).keys()].map((num) => (
+              <option value={num + 1} key={uuidv4()}>
+                {num + 1}
+              </option>
+            ))}
+          </select>
+          <Button icon={<FaTrash />} type='red' disabled text='Remove' />
+        </Actions>
+      )}
+    </StyledRow>
+  );
+};
+
+const StyledRow = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 35rem;
+  box-shadow: ${cssVariables.boxShadow};
+`;
+
+const Header = styled.div`
+  img {
+    max-width: 3rem;
+  }
+`;
+
+const Text = styled.div`
+  p {
+    margin-bottom: 0.5rem;
+  }
+`;
+
+const Actions = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+`;
+export default ProductRow;

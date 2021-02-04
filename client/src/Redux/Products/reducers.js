@@ -11,7 +11,7 @@ import {
   TOP_PRODUCTS_GET_REQUEST,
   TOP_PRODUCTS_GET_SUCCESS,
   TOP_PRODUCTS_GET_FAIL,
-} from '../consts';
+} from './constants';
 
 export const productsReducer = (state = {}, action) => {
   switch (action.type) {

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getTopProducts } from '../Redux/actions/productActions';
+import { getTopProducts } from '../Redux/Products/actions';
 import { GlobalPageInit } from '../GlobalStyles';
 import styled from 'styled-components';
 import Header from './Header';

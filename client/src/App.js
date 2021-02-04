@@ -2,11 +2,11 @@ import React from 'react';
 import { GlobalStyles } from './GlobalStyles';
 import Nav from './Common/Nav';
 import Footer from './Common/Footer';
-
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './Home';
 import Shop from './Shop';
 import Product from './Product';
+import Cart from './Cart';
 
 function App() {
   return (
@@ -27,6 +27,7 @@ function App() {
           />
           <Route path='/product/:slug/:id' component={Product}></Route>
           <Route path='/shop' component={Shop} />
+          <Route path='/cart' component={Cart} />
           <Route path='/' exact component={Home} />
         </Switch>
         <Footer />

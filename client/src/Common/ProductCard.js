@@ -4,33 +4,40 @@ import { Link } from 'react-router-dom';
 import { colorsVariables } from '../GlobalStyles';
 import Button from './Button';
 import Stars from './Stars';
+import AddToCartButton from './addToCartButton';
 import { FaCartPlus, FaCoins } from 'react-icons/fa';
 
 const ProductCard = ({ product }) => {
   return (
     <>
-      <Link to={`/product/${product.slug}/${product._id}`}>
-        <StyledCard>
-          <Content>
+      <StyledCard>
+        <Content>
+          <Link to={`/product/${product.slug}/${product._id}`}>
             <Header>
               <img src={`/images/${product.image}`} alt='' />
             </Header>
-            <Text>
+          </Link>
+          <Text>
+            <Link to={`/product/${product.slug}/${product._id}`}>
               <h3>{product.title} </h3>
               <Stars rating={product.rating} />
-              <p>
-                {product.price} <FaCoins />
-              </p>
+            </Link>
+            <p>
+              {product.price} <FaCoins />
+            </p>
+            {product.countInStock > 0 ? (
+              <AddToCartButton currentProduct={product} quantity={1} />
+            ) : (
               <Button
-                text='Add to cart'
+                text='Out of stock'
                 type='red'
                 icon={<FaCartPlus />}
-                link
+                disabled
               />
-            </Text>
-          </Content>
-        </StyledCard>
-      </Link>
+            )}
+          </Text>
+        </Content>
+      </StyledCard>
     </>
   );
 };
@@ -52,7 +59,7 @@ const Text = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
-  min-height: 9rem;
+  min-height: 8rem;
   margin-top: 0.3rem;
 
   button {
