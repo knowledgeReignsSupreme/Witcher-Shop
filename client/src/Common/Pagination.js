@@ -9,7 +9,11 @@ const Pagination = ({ pages, category, sort, keyword }) => {
       {[...Array(pages).keys()].map((page) => (
         <NavLink
           key={page + 1}
-          to={`/shop/${category}/${sort}/${keyword}/${page + 1}`}
+          to={
+            keyword
+              ? `/shop/${category}/${sort}/${keyword}/${page + 1}`
+              : `/shop/${category}/${sort}/${page + 1}`
+          }
         >
           {page + 1}
         </NavLink>
