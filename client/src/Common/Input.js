@@ -13,8 +13,7 @@ const Input = ({
 }) => {
   return (
     <StyledInput error={error}>
-      <label htmlFor=''>
-        {required ? <span>*</span> : ''}
+      <label htmlFor={label}>
         <p>{label}</p>
       </label>
 
@@ -23,6 +22,7 @@ const Input = ({
         value={value}
         placeholder={placeholder}
         onChange={onChange}
+        htmlFor={label}
       />
 
       {error && (
@@ -35,9 +35,6 @@ const Input = ({
 };
 
 const StyledInput = styled.div`
-  label {
-  }
-
   input {
     margin-top: 0.5rem;
     border: 1px solid ${colorsVariables.colorSecDark};
@@ -47,12 +44,13 @@ const StyledInput = styled.div`
   }
 
   p span {
-    color: red;
+    color: ${colorsVariables.colorMainDark};
     font-weight: bold;
   }
 
   p {
     margin-top: 0.3rem;
+    font-weight: bold;
   }
 `;
 

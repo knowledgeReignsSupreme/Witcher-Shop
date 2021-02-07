@@ -5,7 +5,7 @@ const errorHandler = (error, req, res, next) => {
 
   err.message = error.message;
 
-  console.log(error.name);
+  console.log(error);
 
   if (error.name === 'CastError') {
     const message = `Resource not found with id of ${error.value}`;

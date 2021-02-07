@@ -12,29 +12,29 @@ const Dropdown = ({ setIsComponentVisible, toggleOnClick }) => {
             <p>All products</p>
           </NavLink>
 
-          <NavLink to='/shop/silver-swords/title/1'>
+          <NavLink to='/shop/category/silver-swords/sort/title/page/1'>
             <p>Silver swords</p>
           </NavLink>
 
-          <NavLink to='/shop/steel-swords/title/1'>
+          <NavLink to='/shop/category/steel-swords/sort/title/page/1'>
             <p>Steel swords</p>
           </NavLink>
 
-          <NavLink to='/shop/armors/title/1'>
+          <NavLink to='/shop/category/armors/sort/title/page/1'>
             <p>Armors</p>
           </NavLink>
 
-          <NavLink to='/shop/potions/title/1'>
+          <NavLink to='/shop/category/postions/sort/title/page/1'>
             <p>Potions</p>
           </NavLink>
         </MainNav>
 
         <SecNav onClick={() => toggleOnClick(false)}>
-          <NavLink to='/shop/register'>
+          <NavLink to='/register'>
             <p>Sign up</p>
           </NavLink>
 
-          <NavLink to='/shop/login'>
+          <NavLink to='/login'>
             <p>Sign in</p>
           </NavLink>
           {/* //TODO Change to Profile and Log Out when implementing user logic */}
@@ -71,6 +71,7 @@ const StyledDropdown = styled.div`
     margin-top: 1rem;
     margin-left: 0.5rem;
     font-size: 1.1rem;
+    text-transform: uppercase;
   }
 
   a:hover {

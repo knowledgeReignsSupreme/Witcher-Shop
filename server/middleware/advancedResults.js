@@ -73,10 +73,16 @@ const advancedResults = (model, populate) => async (req, res, next) => {
       finalResultPages = await model.countDocuments();
     }
   } else {
-    finalResultPages = await model.countDocuments({
-      category: req.query.category,
-      title: { $regex: req.query.keyword, $options: 'i' },
-    });
+    if (req.query.keyword !== 'nokeyword') {
+      finalResultPages = await model.countDocuments({
+        category: req.query.category,
+        title: { $regex: req.query.keyword, $options: 'i' },
+      });
+    } else {
+      finalResultPages = await model.countDocuments({
+        category: req.query.category,
+      });
+    }
   }
 
   const currentSearchTotalPages = finalResultPages / limit;

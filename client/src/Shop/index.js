@@ -37,21 +37,23 @@ const Shop = ({ match }) => {
     //In Sort, the option in 'select' is the value
     return keyword
       ? history.push(
-          `/shop/${category}/${e.target.value}/${keyword}/${pageNumber}`
+          `/shop/category/${category}/sort/${e.target.value}/search/${keyword}/page/1`
         )
-      : history.push(`/shop/${category}/${e.target.value}/${pageNumber}`);
+      : history.push(
+          `/shop/category/${category}/sort/${e.target.value}/page/1`
+        );
   };
 
   const searchHandler = (searchKeyword) => {
     if (searchKeyword.trim()) {
       return history.push(
-        `/shop/${category}/${sort}/${searchKeyword}/${pageNumber}`
+        `/shop/category/${category}/sort/${sort}/search/${searchKeyword}/page/1`
       );
     }
   };
 
   const resetKeyword = () => {
-    history.push(`/shop/${category}/${sort}/${pageNumber}`);
+    history.push(`/shop/category/${category}/sort/${sort}/page/${pageNumber}`);
   };
 
   return (

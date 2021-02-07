@@ -11,8 +11,10 @@ const Pagination = ({ pages, category, sort, keyword }) => {
           key={page + 1}
           to={
             keyword
-              ? `/shop/${category}/${sort}/${keyword}/${page + 1}`
-              : `/shop/${category}/${sort}/${page + 1}`
+              ? `/shop/category/${category}/sort/${sort}/search/${keyword}/page/${
+                  page + 1
+                }`
+              : `/shop/category/${category}/sort/${sort}/page/${page + 1}`
           }
         >
           {page + 1}
