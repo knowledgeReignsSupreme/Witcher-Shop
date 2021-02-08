@@ -37,7 +37,9 @@ const Nav = () => {
             <Link to='/cart'>
               <FiShoppingCart onClick={() => toggleOnClick(false)} />
             </Link>
-            <FaUser onClick={() => toggleOnClick(false)} />
+            <Link to='/profile'>
+              <FaUser onClick={() => toggleOnClick(false)} />
+            </Link>
             <FaBars onClick={() => toggleOnClick((prevOpen) => !prevOpen)} />
           </SecondaryNav>
         </StyledNav>
@@ -136,8 +138,12 @@ const SecondaryNav = styled.div`
     }
   }
 
-  svg + svg:last-of-type {
+  svg {
     color: ${colorsVariables.colorMainDark};
+  }
+
+  a svg {
+    color: ${colorsVariables.colorWhite};
   }
 
   a {

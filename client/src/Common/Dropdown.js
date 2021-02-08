@@ -1,9 +1,21 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { logout } from '../Redux/User/actions';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { colorsVariables, slideDown } from '../GlobalStyles';
+import { FaSignOutAlt, FaUser } from 'react-icons/fa';
 
-const Dropdown = ({ setIsComponentVisible, toggleOnClick }) => {
+const Dropdown = ({ toggleOnClick }) => {
+  const dispatch = useDispatch();
+
+  const userLogin = useSelector((state) => state.userLogin);
+  const { loggedUser } = userLogin;
+
+  const signOutHandler = () => {
+    dispatch(logout());
+  };
+
   return (
     <OutterDropdown>
       <StyledDropdown>
@@ -29,16 +41,28 @@ const Dropdown = ({ setIsComponentVisible, toggleOnClick }) => {
           </NavLink>
         </MainNav>
 
-        <SecNav onClick={() => toggleOnClick(false)}>
-          <NavLink to='/register'>
-            <p>Sign up</p>
-          </NavLink>
+        {loggedUser ? (
+          <SecNav onClick={() => toggleOnClick(false)}>
+            <NavLink to='/profile'>
+              <p>
+                <FaUser /> Profile
+              </p>
+            </NavLink>
+            <p onClick={signOutHandler}>
+              <FaSignOutAlt /> Sign out
+            </p>
+          </SecNav>
+        ) : (
+          <SecNav onClick={() => toggleOnClick(false)}>
+            <NavLink to='/register'>
+              <p>Sign up</p>
+            </NavLink>
 
-          <NavLink to='/login'>
-            <p>Sign in</p>
-          </NavLink>
-          {/* //TODO Change to Profile and Log Out when implementing user logic */}
-        </SecNav>
+            <NavLink to='/login'>
+              <p>Sign in</p>
+            </NavLink>
+          </SecNav>
+        )}
       </StyledDropdown>
     </OutterDropdown>
   );
@@ -72,9 +96,10 @@ const StyledDropdown = styled.div`
     margin-left: 0.5rem;
     font-size: 1.1rem;
     text-transform: uppercase;
+    cursor: pointer;
   }
 
-  a:hover {
+  p:hover {
     color: ${colorsVariables.colorMainDark};
   }
 `;

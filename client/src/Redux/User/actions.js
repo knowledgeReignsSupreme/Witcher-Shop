@@ -5,6 +5,7 @@ import {
   USER_LOGIN_REQUEST,
   USER_LOGIN_SUCCESS,
   USER_LOGIN_FAIL,
+  USER_LOGOUT,
   USER_GOOGLE_LOGIN_REQUEST,
   USER_GOOGLE_LOGIN_SUCCESS,
   USER_GOOGLE_LOGIN_FAIL,
@@ -109,7 +110,8 @@ export const googleLogin = (tokenId) => async (dispatch) => {
 
 export const logout = () => async (dispatch) => {
   dispatch({
-    type: ' USER_LOGOUT',
+    type: USER_LOGOUT,
   });
+  await axios.post(`/api/v1/users/logout`);
   localStorage.removeItem('loggedUser');
 };

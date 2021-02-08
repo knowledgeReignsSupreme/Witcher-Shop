@@ -5,6 +5,7 @@ import {
   USER_LOGIN_REQUEST,
   USER_LOGIN_SUCCESS,
   USER_LOGIN_FAIL,
+  USER_LOGOUT,
   USER_GOOGLE_LOGIN_REQUEST,
   USER_GOOGLE_LOGIN_SUCCESS,
   USER_GOOGLE_LOGIN_FAIL,
@@ -37,6 +38,8 @@ export const userLoginReducer = (state = {}, action) => {
       return { ...state, isLoading: false, loggedUser: action.payload };
     case USER_GOOGLE_LOGIN_FAIL:
       return { ...state, isLoading: false, error: action.payload };
+    case USER_LOGOUT:
+      return {};
 
     default:
       return state;
