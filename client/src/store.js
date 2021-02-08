@@ -8,7 +8,11 @@ import {
   topProductsReducer,
 } from './Redux/Products/reducers';
 import { cartReducer } from './Redux/Cart/reducers';
-import { userLoginReducer, userRegisterReducer } from './Redux/User/reducers';
+import {
+  userLoginReducer,
+  userRegisterReducer,
+  userProfileReducer,
+} from './Redux/User/reducers';
 
 const combinedReducers = combineReducers({
   products: productsReducer,
@@ -18,6 +22,7 @@ const combinedReducers = combineReducers({
   cart: cartReducer,
   userLogin: userLoginReducer,
   userRegister: userRegisterReducer,
+  userProfile: userProfileReducer,
 });
 
 const cartItemsFromStotage = localStorage.getItem('cartItems')
@@ -28,8 +33,15 @@ const loggedUserFromStorage = localStorage.getItem('loggedUser')
   ? JSON.parse(localStorage.getItem('loggedUser'))
   : null;
 
+const shippingAddressFromStorage = localStorage.getItem('shippingAddress')
+  ? JSON.parse(localStorage.getItem('shippingAddress'))
+  : {};
+
 const initialState = {
-  cart: { cartItems: cartItemsFromStotage },
+  cart: {
+    cartItems: cartItemsFromStotage,
+    shippingAddress: shippingAddressFromStorage,
+  },
   userLogin: { loggedUser: loggedUserFromStorage },
 };
 

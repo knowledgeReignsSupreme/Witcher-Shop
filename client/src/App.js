@@ -9,6 +9,9 @@ import Product from './Product';
 import Cart from './Cart';
 import Login from './Login';
 import Register from './Register';
+import Profile from './Profile';
+import Shipping from './Shipping';
+import Payment from './Payment';
 
 function App() {
   return (
@@ -30,8 +33,13 @@ function App() {
           <Route path='/product/:slug/:id' component={Product}></Route>
           <Route path='/shop' component={Shop} />
           <Route path='/cart' component={Cart} />
-          <Route path='/login' exact component={Login} />
-          <Route path='/register' exact component={Register} />
+
+          <Route path='/login/redirect=:redirectPath' component={Login} />
+          <Route path='/register/redirect=:redirectPath' component={Register} />
+          <Route path='/profile' exact component={Profile} />
+          <Route path='/shipping' exact component={Shipping} />
+          <Route path='/payment' exact component={Payment} />
+
           <Route path='/' exact component={Home} />
         </Switch>
         <Footer />

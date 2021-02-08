@@ -9,7 +9,10 @@ import Loader from '../Common/Loader';
 import Button from '../Common/Button';
 import Input from '../Common/Input';
 
-const Login = () => {
+const Login = ({ match }) => {
+  let redirectTo = match.params.redirectPath;
+  redirectTo = redirectTo === 'home' ? '/' : redirectTo;
+
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -26,10 +29,11 @@ const Login = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    console.log(redirectTo);
     if (loggedUser) {
-      history.push('/');
+      history.push(`/${redirectTo}`);
     }
-  }, [history, loggedUser]);
+  }, [history, loggedUser, redirectTo]);
 
   return (
     <>
@@ -58,7 +62,8 @@ const Login = () => {
             )}
             {error && <h4>{error}</h4>}
             <p>
-              Don't have an account yet? <Link to='/register'>Sign up</Link>
+              Don't have an account yet?{' '}
+              <Link to={`/register/redirect=${redirectTo}`}>Sign up</Link>
             </p>
           </FormStyled>
           <GoogleSignin text='Log in' />

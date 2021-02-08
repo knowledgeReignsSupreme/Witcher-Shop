@@ -108,7 +108,8 @@ export const StyledForm = styled.form`
     margin-bottom: 1rem;
   }
 
-  input {
+  input,
+  select {
     width: 95%;
   }
 
@@ -127,7 +128,8 @@ export const StyledForm = styled.form`
 
   @media (min-width: 600px) {
     width: 35rem;
-    input {
+    input,
+    select {
       width: 100%;
     }
   }

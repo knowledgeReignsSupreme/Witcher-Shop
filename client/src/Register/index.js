@@ -9,7 +9,10 @@ import Loader from '../Common/Loader';
 import Input from '../Common/Input';
 import Button from '../Common/Button';
 
-const Register = () => {
+const Register = ({ match }) => {
+  let redirectTo = match.params.redirectPath;
+  redirectTo = redirectTo === 'home' ? '/' : redirectTo;
+
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -96,9 +99,9 @@ const Register = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     if (loggedUser) {
-      history.push('/');
+      history.push(`/${redirectTo}`);
     }
-  }, [history, loggedUser]);
+  }, [history, loggedUser, redirectTo]);
 
   return (
     <>
@@ -143,7 +146,8 @@ const Register = () => {
               <Button text='Register' color='red' submit />
             )}
             <p>
-              Already have an account? <Link to='/login'>Login</Link>
+              Already have an account?{' '}
+              <Link to={`/login/redirect=${redirectTo}`}>Login</Link>
             </p>
           </FormStyle>
 

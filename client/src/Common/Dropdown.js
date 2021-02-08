@@ -54,11 +54,11 @@ const Dropdown = ({ toggleOnClick }) => {
           </SecNav>
         ) : (
           <SecNav onClick={() => toggleOnClick(false)}>
-            <NavLink to='/register'>
+            <NavLink to='/register/redirect=home'>
               <p>Sign up</p>
             </NavLink>
 
-            <NavLink to='/login'>
+            <NavLink to='/login/redirect=home'>
               <p>Sign in</p>
             </NavLink>
           </SecNav>

@@ -9,6 +9,9 @@ import {
   USER_GOOGLE_LOGIN_REQUEST,
   USER_GOOGLE_LOGIN_SUCCESS,
   USER_GOOGLE_LOGIN_FAIL,
+  USER_PROFILE_SUCCESS,
+  USER_PROFILE_REQUEST,
+  USER_PROFILE_FAIL,
 } from './constants';
 import axios from 'axios';
 
@@ -114,4 +117,28 @@ export const logout = () => async (dispatch) => {
   });
   await axios.post(`/api/v1/users/logout`);
   localStorage.removeItem('loggedUser');
+};
+
+export const getUserProfile = () => async (dispatch) => {
+  try {
+    dispatch({
+      type: USER_PROFILE_REQUEST,
+    });
+
+    const { data } = await axios.get('/api/v1/users/profile');
+
+    const userInfo = data?.data?.user;
+
+    dispatch({
+      type: USER_PROFILE_SUCCESS,
+      payload: userInfo,
+    });
+  } catch (error) {
+    dispatch({
+      type: USER_PROFILE_FAIL,
+      payload: error.response.data.err
+        ? error.response.data.err
+        : error.message,
+    });
+  }
 };

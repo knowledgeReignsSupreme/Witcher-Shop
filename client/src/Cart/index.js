@@ -49,7 +49,7 @@ const Cart = () => {
               <Button color='red' link text='Shop more' />
             </Link>
 
-            <Link to='/checkout'>
+            <Link to='/shipping'>
               <Button color='black' link text='Checkout &rarr;' />
             </Link>
           </StyledCartActions>

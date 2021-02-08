@@ -2,15 +2,7 @@ import React from 'react';
 import { colorsVariables } from '../GlobalStyles';
 import styled from 'styled-components';
 
-const Input = ({
-  label,
-  onChange,
-  value,
-  required,
-  placeholder,
-  error,
-  type,
-}) => {
+const Input = ({ label, onChange, value, placeholder, error, type }) => {
   return (
     <StyledInput error={error}>
       <label htmlFor={label}>
@@ -19,10 +11,10 @@ const Input = ({
 
       <input
         type={type || 'text'}
-        value={value}
         placeholder={placeholder}
         onChange={onChange}
         htmlFor={label}
+        defaultValue={value}
       />
 
       {error && (
