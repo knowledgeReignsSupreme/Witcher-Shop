@@ -84,7 +84,7 @@ const Product = ({ match }) => {
                   quantity={quantity || 1}
                 />
               ) : (
-                <Button text='Out of stock' type='red' disabled />
+                <Button text='Out of stock' color='red' disabled />
               )}
             </CTAWrapper>
           </Text>

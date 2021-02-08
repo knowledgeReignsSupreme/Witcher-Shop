@@ -46,6 +46,7 @@ const StyledInput = styled.div`
   p span {
     color: ${colorsVariables.colorMainDark};
     font-weight: bold;
+    font-size: 0.8rem;
   }
 
   p {

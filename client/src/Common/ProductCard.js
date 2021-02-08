@@ -30,7 +30,7 @@ const ProductCard = ({ product }) => {
             ) : (
               <Button
                 text='Out of stock'
-                type='red'
+                color='red'
                 icon={<FaCartPlus />}
                 disabled
               />

@@ -99,6 +99,40 @@ export const GlobalPageInit = styled.main`
   margin-top: 0.2rem;
 `;
 
+export const StyledForm = styled.form`
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+
+  button {
+    margin-bottom: 1rem;
+  }
+
+  input {
+    width: 95%;
+  }
+
+  p {
+    width: 95%;
+  }
+
+  a {
+    color: ${colorsVariables.colorLink};
+    font-weight: bold;
+  }
+
+  div {
+    margin-top: 1rem !important;
+  }
+
+  @media (min-width: 600px) {
+    width: 35rem;
+    input {
+      width: 100%;
+    }
+  }
+`;
+
 export const slideDown = keyframes`
   0%{transform: translateY(-100%); opacity: 0;}
   100%{transform: translateY(0); opacity: 1;}

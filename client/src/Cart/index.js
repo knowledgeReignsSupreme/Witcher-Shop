@@ -27,7 +27,6 @@ const Cart = () => {
   const calculateTotalPrice = useCallback(() => {
     const newPrice = cartItems.reduce((a, b) => +a + b.price * +b.quantity, 0);
     setTotalPrice(newPrice);
-    console.log('HEY');
   }, [cartItems]);
 
   useEffect(() => {
@@ -39,19 +38,19 @@ const Cart = () => {
       {cartItems <= 0 ? (
         <StyledEmptyCrt>
           <h1 style={{ textAlign: 'center' }}>Cart is empty</h1>
-          <Link to='/shop/all/title/1'>
-            <Button type='red' link text='Shop items' />
+          <Link to='/shop/category/all/sort/title/page/1'>
+            <Button color='red' link text='Shop items' />
           </Link>
         </StyledEmptyCrt>
       ) : (
         <>
           <StyledCartActions>
-            <Link to='/shop/all/title/1'>
-              <Button type='red' link text='Shop more' />
+            <Link to='/shop/category/all/sort/title/page/1'>
+              <Button color='red' link text='Shop more' />
             </Link>
 
             <Link to='/checkout'>
-              <Button type='black' link text='Checkout &rarr;' />
+              <Button color='black' link text='Checkout &rarr;' />
             </Link>
           </StyledCartActions>
           <Sum>Total price: {totalPrice}</Sum>
@@ -87,9 +86,9 @@ const StyledCartActions = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0 auto;
   width: 100%;
   max-width: 35rem;
-  margin: 0 auto;
 
   border-bottom: 1px solid black;
   padding: 1rem 0;

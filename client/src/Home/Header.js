@@ -12,7 +12,7 @@ const Header = () => {
         <h1>Witcher Shop</h1>
         <h4>Everything you need for the perfect hunt</h4>
         <Link to='/shop/category/all/sort/title/page/1'>
-          <Button text='Start Browsing' type='black' link />
+          <Button text='Start Browsing' color='black' link />
         </Link>
       </StyledText>
     </StyledHeader>

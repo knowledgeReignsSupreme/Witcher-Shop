@@ -28,7 +28,7 @@ const AddToCartButton = ({ currentProduct, quantity }) => {
       <Button
         text='Add to cart'
         icon={<FaCartPlus />}
-        type='red'
+        color='red'
         args={[currentProduct._id, quantity]}
         handleClick={cartHandler}
       />

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { register } from '../Redux/User/actions';
 import { Link, useHistory } from 'react-router-dom';
 import styled from 'styled-components';
-import { GlobalPageInit, colorsVariables } from '../GlobalStyles';
+import { GlobalPageInit, StyledForm } from '../GlobalStyles';
 import GoogleSignin from '../Common/GoogleSignin';
 import Loader from '../Common/Loader';
 import Input from '../Common/Input';
@@ -25,7 +25,10 @@ const Register = () => {
   const [registerAttempt, setRegisterAttempt] = useState(false);
 
   const userRegister = useSelector((state) => state.userRegister);
-  const { isLoading, error, loggedUser } = userRegister;
+  const { isLoading: registerPending } = userRegister;
+
+  const userLogin = useSelector((state) => state.userLogin);
+  const { loggedUser } = userLogin;
 
   const isValidEmail = (e) => {
     // eslint-disable-next-line
@@ -54,7 +57,7 @@ const Register = () => {
     } else {
       setConfirmPasswordError(false);
     }
-  }, [confirmPassword, email, name.length, password]);
+  }, [confirmPassword, email, password, name]);
 
   const checkBeforeSubmit = () => {
     if (
@@ -69,7 +72,7 @@ const Register = () => {
     }
   };
 
-  const submitHandler = (e) => {
+  const registerHandler = (e) => {
     e.preventDefault();
     setRegisterAttempt(true);
     if (checkBeforeSubmit()) {
@@ -92,104 +95,73 @@ const Register = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-
     if (loggedUser) {
       history.push('/');
     }
   }, [history, loggedUser]);
 
   return (
-    <StyledRegister>
-      <StyledForm onSubmit={submitHandler}>
-        <h3>Start upgrading your witcher gear!</h3>
-        <Input
-          label='Name:'
-          placeholder='Enter your name'
-          onChange={(e) => setName(e.target.value)}
-          required='true'
-          error={nameError}
-        />
-        <Input
-          label='Email:'
-          placeholder='Enter your email address'
-          onChange={(e) => setEmail(e.target.value)}
-          required='true'
-          type='email'
-          error={emailError}
-        />
-        <Input
-          label='Password:'
-          placeholder='Enter password'
-          onChange={(e) => setPassword(e.target.value)}
-          required='true'
-          type='password'
-          error={passwordError}
-        />
-        <Input
-          label='Confirm password:'
-          placeholder='Enter password again'
-          onChange={(e) => setConfirmPassword(e.target.value)}
-          required='true'
-          type='password'
-          error={confirmPasswordError}
-        />
-        <Button
-          text='Register'
-          type='red'
-          args={['']}
-          event
-          handleClick={submitHandler}
-        />
-        <p>
-          Already have an account? <Link to='/login'>Login</Link>
-        </p>
-      </StyledForm>
-      <StyledGoogleRegister>
-        <h3>Register using google</h3>
-        <GoogleSignin text='Register with Google' />
-      </StyledGoogleRegister>
-    </StyledRegister>
+    <>
+      {!loggedUser && (
+        <StyledRegister>
+          <FormStyle onSubmit={registerHandler}>
+            <h3>Start upgrading your witcher gear!</h3>
+            <Input
+              label='Name:'
+              placeholder='Enter your name'
+              onChange={(e) => setName(e.target.value)}
+              required='true'
+              error={nameError}
+            />
+            <Input
+              label='Email:'
+              placeholder='Enter your email address'
+              onChange={(e) => setEmail(e.target.value)}
+              required='true'
+              type='email'
+              error={emailError}
+            />
+            <Input
+              label='Password:'
+              placeholder='Enter password'
+              onChange={(e) => setPassword(e.target.value)}
+              required='true'
+              type='password'
+              error={passwordError}
+            />
+            <Input
+              label='Confirm password:'
+              placeholder='Enter password again'
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required='true'
+              type='password'
+              error={confirmPasswordError}
+            />
+            {registerPending ? (
+              <Loader size={15} message='Sending information...' />
+            ) : (
+              <Button text='Register' color='red' submit />
+            )}
+            <p>
+              Already have an account? <Link to='/login'>Login</Link>
+            </p>
+          </FormStyle>
+
+          <GoogleSignin text='Register' />
+        </StyledRegister>
+      )}
+    </>
   );
 };
 
 const StyledRegister = styled(GlobalPageInit)`
   margin-top: 1rem;
+
   h3 {
     margin-bottom: 1rem;
   }
 `;
 
-const StyledForm = styled.form`
-  margin-bottom: 1rem;
-  width: 100%;
-  button {
-    margin-bottom: 1rem;
-  }
+const FormStyle = styled(StyledForm)``;
 
-  input {
-    width: 85%;
-  }
-
-  p {
-    width: 90%;
-  }
-
-  a {
-    color: ${colorsVariables.colorLink};
-    font-weight: bold;
-  }
-
-  div {
-    margin-top: 1rem !important;
-  }
-
-  @media (min-width: 600px) {
-    width: 25rem;
-  }
-`;
-
-const StyledGoogleRegister = styled.div`
-  border-top: 1px solid black;
-  padding-top: 1rem;
-`;
 export default Register;

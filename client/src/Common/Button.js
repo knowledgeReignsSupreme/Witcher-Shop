@@ -8,22 +8,27 @@ const Button = ({
   handleClick,
   args,
   event,
-  type,
+  color,
   link,
   disabled,
+  submit,
 }) => {
   return (
     <div>
       {event ? (
-        <StyledButton onClick={(e) => handleClick(e, ...args)} type={type}>
+        <StyledButton onClick={(e) => handleClick(e, ...args)} color={color}>
           {icon && icon} {text && text}
         </StyledButton>
       ) : handleClick ? (
-        <StyledButton onClick={(e) => handleClick(...args)} type={type}>
+        <StyledButton onClick={(e) => handleClick(...args)} color={color}>
           {icon && icon} {text && text}
         </StyledButton>
       ) : link || disabled ? (
-        <StyledButton type={type} disabled={disabled}>
+        <StyledButton color={color} disabled={disabled}>
+          {icon && icon} {text && text}
+        </StyledButton>
+      ) : submit ? (
+        <StyledButton color={color} type='submit'>
           {icon && icon} {text && text}
         </StyledButton>
       ) : (
@@ -35,17 +40,17 @@ const Button = ({
 
 const StyledButton = styled.button`
   background: ${(props) =>
-    props.type === 'red' && colorsVariables.colorMainDark};
+    props.color === 'red' && colorsVariables.colorMainDark};
   background: ${(props) =>
-    props.type === 'black' && colorsVariables.colorSecDark};
-  background: ${(props) => props.type === 'transparent' && 'transparent'};
+    props.color === 'black' && colorsVariables.colorSecDark};
+  background: ${(props) => props.color === 'transparent' && 'transparent'};
 
-  color: ${(props) => props.type === 'black' && colorsVariables.colorMainDark};
-  color: ${(props) => props.type === 'red' && colorsVariables.colorWhite};
+  color: ${(props) => props.color === 'black' && colorsVariables.colorMainDark};
+  color: ${(props) => props.color === 'red' && colorsVariables.colorWhite};
 
-  box-shadow: ${(props) => props.type !== 'icon' && cssVariables.boxShadow};
+  box-shadow: ${(props) => props.color !== 'icon' && cssVariables.boxShadow};
   border: ${(props) =>
-    props.type === 'transparent' &&
+    props.color === 'transparent' &&
     `1px solid ${colorsVariables.colorSecDark}`};
 
   padding: 0.4rem 0.6rem;

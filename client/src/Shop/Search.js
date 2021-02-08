@@ -20,7 +20,7 @@ const Search = ({
       <StyledButtons>
         <Button
           handleClick={searchHandler}
-          type='red'
+          color='red'
           text='Search'
           args={[searchKeyword]}
           icon={<FaSearch />}
@@ -28,7 +28,7 @@ const Search = ({
         <Button
           handleClick={resetKeyword}
           args={''}
-          type='black'
+          color='black'
           text='Reset search'
         >
           Reset search

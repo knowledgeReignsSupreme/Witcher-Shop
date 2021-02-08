@@ -18,9 +18,10 @@ const GoogleSignin = ({ text }) => {
 
   return (
     <StyledGoogleLogin>
+      <h3>{text} using google</h3>
       <GoogleLogin
         clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
-        buttonText={text}
+        buttonText={`${text} with Google`}
         onSuccess={successGoogleResponse}
         onFailure={failGoogleResponse}
         cookiePolicy={'single_host_origin'}
@@ -30,6 +31,15 @@ const GoogleSignin = ({ text }) => {
 };
 
 const StyledGoogleLogin = styled.div`
+  width: 95%;
+  border-top: 1px solid black;
+  padding-top: 1rem;
+
+  @media (min-width: 600px) {
+    width: 35rem;
+    margin: 0 auto;
+  }
+
   button {
     color: ${colorsVariables.colorWhite} !important;
     background: ${colorsVariables.colorSecDark} !important;

@@ -42,7 +42,7 @@ const ProductRow = ({
           </select>
           <Button
             icon={<FaTrash />}
-            type='red'
+            color='red'
             handleClick={removeHandler}
             args={[product.productId]}
             text='Remove'
