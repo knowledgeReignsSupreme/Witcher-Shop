@@ -97,7 +97,7 @@ exports.googleLogin = asyncHandler(async (req, res, next) => {
 });
 
 // desc     Log user out / clear cookie
-// route    POST /api/v1/auth/logout
+// route    POST /api/v1/users/logout
 // access   Private
 exports.logout = asyncHandler(async (req, res, next) => {
   res.cookie('token', 'none', {
@@ -105,4 +105,17 @@ exports.logout = asyncHandler(async (req, res, next) => {
     httpOnly: true,
   });
   res.status(200).json({ success: true, data: {} });
+});
+
+// desc     Send user profile
+// route    POST /api/v1/users/profile
+// access   Private
+exports.getProfile = asyncHandler(async (req, res, next) => {
+  const user = req.user;
+
+  if (!user) {
+    return next(new ErrorResponse('User not found with this id'), 404);
+  }
+
+  res.status(200).json({ success: true, data: { user } });
 });
