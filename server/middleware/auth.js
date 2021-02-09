@@ -2,16 +2,11 @@ const jwt = require('jsonwebtoken');
 const asyncHandler = require('./async');
 const ErrorResponse = require('../utils/errorResponse');
 const User = require('../models/User');
+const Order = require('../models/Order');
 
 exports.protect = asyncHandler(async (req, res, next) => {
   let token;
 
-  // if (
-  //   req.headers.authorization &&
-  //   req.headers.authorization.startsWith('Bearer')
-  // ) {
-  //   token = req.headers.authorization.split(' ')[1];
-  // }
   if (req.cookies?.token) {
     console.log('E');
     token = req.cookies?.token;
@@ -30,4 +25,24 @@ exports.protect = asyncHandler(async (req, res, next) => {
   } catch (error) {
     return next(new ErrorResponse(`Not authorize to access this route`), 401);
   }
+});
+
+exports.isOrderMadeByUser = asyncHandler(async (req, res, next) => {
+  const order = await Order.findById(req.params.id).populate(
+    'user',
+    'name email'
+  );
+
+  if (!order) {
+    return next(new ErrorResponse('Order not found', 404));
+  }
+
+  if (order.user !== req.user._id && !req.user.isAdmin) {
+    return next(
+      new ErrorResponse('You are not allowed to view this order.', 401)
+    );
+  }
+
+  req.order = order;
+  next();
 });

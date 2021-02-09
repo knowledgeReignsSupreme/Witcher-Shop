@@ -24,9 +24,11 @@ if (process.env.NODE_ENV === 'development') {
 
 const products = require('./routes/products');
 const users = require('./routes/users');
+const orders = require('./routes/orders');
 
 app.use('/api/v1/products', products);
 app.use('/api/v1/users', users);
+app.use('/api/v1/orders', orders);
 app.use(errorHandler);
 
 app.listen(PORT, () => console.log(`Server is listening on port ${PORT}`));

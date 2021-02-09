@@ -8,6 +8,7 @@ import {
   topProductsReducer,
 } from './Redux/Products/reducers';
 import { cartReducer } from './Redux/Cart/reducers';
+import { orderCreateReducer } from './Redux/Orders/reducers';
 import {
   userLoginReducer,
   userRegisterReducer,
@@ -23,6 +24,7 @@ const combinedReducers = combineReducers({
   userLogin: userLoginReducer,
   userRegister: userRegisterReducer,
   userProfile: userProfileReducer,
+  orderCreate: orderCreateReducer,
 });
 
 const cartItemsFromStotage = localStorage.getItem('cartItems')

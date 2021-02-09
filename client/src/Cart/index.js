@@ -8,6 +8,7 @@ import styled from 'styled-components';
 import { GlobalPageInit } from '../GlobalStyles';
 import ProductRow from '../Common/ProductRow';
 import Button from '../Common/Button';
+import EmptyCart from '../Common/EmptyCart';
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -36,12 +37,7 @@ const Cart = () => {
   return (
     <StyledCart>
       {cartItems <= 0 ? (
-        <StyledEmptyCrt>
-          <h1 style={{ textAlign: 'center' }}>Cart is empty</h1>
-          <Link to='/shop/category/all/sort/title/page/1'>
-            <Button color='red' link text='Shop items' />
-          </Link>
-        </StyledEmptyCrt>
+        <EmptyCart />
       ) : (
         <>
           <StyledCartActions>
@@ -95,12 +91,4 @@ const StyledCartActions = styled.div`
   padding-bottom: 0.5rem;
 `;
 
-const StyledEmptyCrt = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  min-height: 30vh;
-`;
 export default Cart;
