@@ -12,7 +12,7 @@ const ProductRow = ({
   quantityChangeHandler,
 }) => {
   return (
-    <StyledRow>
+    <StyledRow usage={usage}>
       <Header>
         <img src={`/images/${product.image}`} alt='' />
       </Header>
@@ -49,6 +49,12 @@ const ProductRow = ({
           />
         </Actions>
       )}
+      {usage === 'order' && (
+        <SumExplaination>
+          {product.quantity} X {product.price} = $
+          {+product.quantity * +product.price}
+        </SumExplaination>
+      )}
     </StyledRow>
   );
 };
@@ -58,7 +64,7 @@ const StyledRow = styled.div`
   justify-content: space-between;
   align-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin: ${(props) => props.usage === 'cart' && '0 auto'};
   padding: 1rem;
   margin-bottom: 1rem;
   width: 100%;
@@ -69,11 +75,12 @@ const StyledRow = styled.div`
 const Header = styled.div`
   img {
     max-width: 3rem;
+    margin-right: 0.5rem;
   }
 `;
 
 const Text = styled.div`
-  width: 40%;
+  width: ${(props) => (props.usage === 'cart' ? '40%' : '50%')};
   p {
     margin-bottom: 0.5rem;
   }
@@ -84,5 +91,15 @@ const Actions = styled.div`
   flex-direction: column;
   align-content: center;
   justify-content: center;
+`;
+
+const SumExplaination = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  white-space: nowrap;
+  font-weight: bold;
+  font-size: 0.8rem;
 `;
 export default ProductRow;

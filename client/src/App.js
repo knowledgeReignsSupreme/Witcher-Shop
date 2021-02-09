@@ -12,6 +12,7 @@ import Register from './Register';
 import Profile from './Profile';
 import Shipping from './Shipping';
 import Payment from './Payment';
+import Order from './Order';
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
           <Route path='/profile' exact component={Profile} />
           <Route path='/shipping' exact component={Shipping} />
           <Route path='/payment' exact component={Payment} />
+          <Route path='/order' exact component={Order} />
 
           <Route path='/' exact component={Home} />
         </Switch>

@@ -48,7 +48,7 @@ const StyledStages = styled.div`
   display: flex;
   justify-content: space-around;
   width: 100%;
-  margin-bottom: 1.5rem;
+  margin: 1rem 0 1.5rem 0;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid black;
 `;

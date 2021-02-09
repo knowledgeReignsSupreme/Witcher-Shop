@@ -86,7 +86,7 @@ const Shipping = () => {
 
   useEffect(() => {
     if (!loggedUser) {
-      history.push('/login/redirect=cart');
+      history.push('/login/redirect=shipping');
     }
   });
 

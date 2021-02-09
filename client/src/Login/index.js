@@ -8,6 +8,7 @@ import GoogleSignin from '../Common/GoogleSignin';
 import Loader from '../Common/Loader';
 import Button from '../Common/Button';
 import Input from '../Common/Input';
+import OrderStages from '../Common/OrderStages';
 
 const Login = ({ match }) => {
   let redirectTo = match.params.redirectPath;
@@ -39,6 +40,7 @@ const Login = ({ match }) => {
     <>
       {!loggedUser && (
         <StyledLogin>
+          {redirectTo === 'shipping' && <OrderStages currentStage={1} />}
           <FormStyled onSubmit={loginHandler}>
             <h3>Log in to your account</h3>
             <Input

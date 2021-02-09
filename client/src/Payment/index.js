@@ -18,26 +18,28 @@ const Payment = () => {
   };
 
   return (
-    <StyledPayment>
+    <>
       <OrderStages currentStage={3} />
-      <h3>Choose a payment method:</h3>
-      <Button
-        link
-        text='Pay with PayPal'
-        color='red'
-        icon={<FaPaypal />}
-        handleClick={paymentMethodHandler}
-        args={['PayPal']}
-      />
-      <Button
-        link
-        text='Pay with Stripe'
-        color='black'
-        icon={<FaCcStripe />}
-        handleClick={paymentMethodHandler}
-        args={['Stripe']}
-      />
-    </StyledPayment>
+      <StyledPayment>
+        <h3>Choose a payment method:</h3>
+        <Button
+          link
+          text='Pay with PayPal'
+          color='red'
+          icon={<FaPaypal />}
+          handleClick={paymentMethodHandler}
+          args={['PayPal']}
+        />
+        <Button
+          link
+          text='Pay with Stripe'
+          color='black'
+          icon={<FaCcStripe />}
+          handleClick={paymentMethodHandler}
+          args={['Stripe']}
+        />
+      </StyledPayment>
+    </>
   );
 };
 

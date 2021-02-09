@@ -68,10 +68,17 @@ const Product = ({ match }) => {
               <li key={uuidv4()}>{effect}</li>
             ))}
             <CTAWrapper>
-              <select name='quantity' onChange={quantityHandler} id=''>
-                <option value='1' defaultValue>
+              <select
+                name='quantity'
+                onChange={quantityHandler}
+                value={quantity}
+              >
+                <option value='novalue' disabled>
                   Select quantity:
                 </option>
+                {currentProduct.countInStock <= 0 && (
+                  <option value='novalue'>Out of stock</option>
+                )}
                 {[...Array(currentProduct.countInStock).keys()].map((num) => (
                   <option key={uuidv4()} value={num + 1}>
                     {num + 1}
