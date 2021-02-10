@@ -12,6 +12,7 @@ import { GlobalPageInit, colorsVariables } from '../GlobalStyles';
 import ProductRow from '../Common/ProductRow';
 import Loader from '../Common/Loader';
 import Error from '../Common/Error';
+import { FaArrowCircleDown, FaArrowCircleUp } from 'react-icons/fa';
 
 const Order = ({ match }) => {
   const publishableKey = process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY;
@@ -135,6 +136,7 @@ const Order = ({ match }) => {
               <h3>Items:</h3>
               <h4 onClick={() => setIsWatchingItems(!isWatchingItems)}>
                 Click to watch items in order ({currentOrder.orderItems.length})
+                {isWatchingItems ? <FaArrowCircleUp /> : <FaArrowCircleDown />}
               </h4>
               {isWatchingItems &&
                 currentOrder.orderItems.map((item) => (
@@ -214,6 +216,11 @@ const Payment = styled.div`
 `;
 
 const Brief = styled.div`
+  svg {
+    margin-left: 0.5rem;
+    vertical-align: middle;
+  }
+
   h3 {
     margin-top: 1rem;
   }

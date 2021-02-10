@@ -64,14 +64,22 @@ exports.getOrderByUser = asyncHandler(async (req, res, next) => {
     user: req.params.userId,
     isPaid: true,
   })
-    .select('isPaid, isDelivered createdAt')
+    .select('isPaid, isDelivered createdAt totalPrice')
     .sort('CreatedAt');
+
+  const deliveredOrders = await Order.find({
+    user: req.params.userId,
+    isPaid: true,
+    isDelivered: true,
+  })
+    .select('isPaid, isDelivered createdAt totalPrice deliveredAt')
+    .sort('deliveredAt');
 
   const awaitingPaymentOrders = await Order.find({
     user: req.params.userId,
     isPaid: false,
   })
-    .select('isPaid, isDelivered createdAt')
+    .select('isPaid, isDelivered totalPrice createdAt')
     .sort('CreatedAt');
 
   const awaitingDeliveryOrders = await Order.find({
@@ -79,11 +87,12 @@ exports.getOrderByUser = asyncHandler(async (req, res, next) => {
     isPaid: true,
     isDelivered: false,
   })
-    .select('isPaid, isDelivered createdAt')
+    .select('isPaid, isDelivered totalPrice createdAt')
     .sort('CreatedAt');
 
   const data = {
     paidOrders,
+    deliveredOrders,
     awaitingPaymentOrders,
     awaitingDeliveryOrders,
   };

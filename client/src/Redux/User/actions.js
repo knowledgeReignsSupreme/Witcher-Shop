@@ -154,11 +154,11 @@ export const getUserOrders = (userId) => async (dispatch) => {
 
     const { data } = await axios.get(`/api/v1/users/${userId}/orders`);
 
-    console.log(data);
+    const ordersInfo = data?.data;
 
     dispatch({
       type: USER_GET_ORDERS_SUCCESS,
-      payload: data,
+      payload: ordersInfo,
     });
   } catch (error) {
     dispatch({

@@ -71,7 +71,21 @@ export const userOrdersReducer = (state = {}, action) => {
     case USER_GET_ORDERS_REQUEST:
       return { ...state, isLoading: true };
     case USER_GET_ORDERS_SUCCESS:
-      return { ...state, isLoading: false, orders: action.payload };
+      const {
+        paidOrders,
+        deliveredOrders,
+        awaitingPaymentOrders,
+        awaitingDeliveryOrders,
+      } = action.payload;
+      return {
+        ...state,
+        isLoading: false,
+        paidOrders,
+        awaitingPaymentOrders,
+        awaitingDeliveryOrders,
+        deliveredOrders,
+        success: true,
+      };
     case USER_GET_ORDERS_FAIL:
       return { ...state, isLoading: false, error: action.payload };
 
