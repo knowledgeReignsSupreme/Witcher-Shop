@@ -12,6 +12,9 @@ import {
   USER_PROFILE_SUCCESS,
   USER_PROFILE_REQUEST,
   USER_PROFILE_FAIL,
+  USER_GET_ORDERS_REQUEST,
+  USER_GET_ORDERS_SUCCESS,
+  USER_GET_ORDERS_FAIL,
 } from './constants';
 import axios from 'axios';
 
@@ -136,6 +139,30 @@ export const getUserProfile = () => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: USER_PROFILE_FAIL,
+      payload: error.response.data.err
+        ? error.response.data.err
+        : error.message,
+    });
+  }
+};
+
+export const getUserOrders = (userId) => async (dispatch) => {
+  try {
+    dispatch({
+      type: USER_GET_ORDERS_REQUEST,
+    });
+
+    const { data } = await axios.get(`/api/v1/users/${userId}/orders`);
+
+    console.log(data);
+
+    dispatch({
+      type: USER_GET_ORDERS_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: USER_GET_ORDERS_FAIL,
       payload: error.response.data.err
         ? error.response.data.err
         : error.message,

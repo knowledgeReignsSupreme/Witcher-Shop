@@ -12,6 +12,9 @@ import {
   USER_PROFILE_SUCCESS,
   USER_PROFILE_REQUEST,
   USER_PROFILE_FAIL,
+  USER_GET_ORDERS_REQUEST,
+  USER_GET_ORDERS_SUCCESS,
+  USER_GET_ORDERS_FAIL,
 } from './constants';
 
 export const userRegisterReducer = (state = {}, action) => {
@@ -56,6 +59,20 @@ export const userProfileReducer = (state = {}, action) => {
     case USER_PROFILE_SUCCESS:
       return { ...state, isLoading: false, userInfo: action.payload };
     case USER_PROFILE_FAIL:
+      return { ...state, isLoading: false, error: action.payload };
+
+    default:
+      return state;
+  }
+};
+
+export const userOrdersReducer = (state = {}, action) => {
+  switch (action.type) {
+    case USER_GET_ORDERS_REQUEST:
+      return { ...state, isLoading: true };
+    case USER_GET_ORDERS_SUCCESS:
+      return { ...state, isLoading: false, orders: action.payload };
+    case USER_GET_ORDERS_FAIL:
       return { ...state, isLoading: false, error: action.payload };
 
     default:
