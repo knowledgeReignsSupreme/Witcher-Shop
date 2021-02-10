@@ -22,7 +22,9 @@ const ProductRow = ({
           <p>
             {product.price * product.quantity} <FaCoins />
           </p>
-          <p>In cart: {product.quantity}</p>
+          <p>
+            {usage === 'cart' ? 'In cart:' : 'In order:'} {product.quantity}
+          </p>
         </Link>
       </Text>
       {usage === 'cart' && (
@@ -65,7 +67,7 @@ const StyledRow = styled.div`
   align-content: center;
   align-items: center;
   margin: ${(props) => props.usage === 'cart' && '0 auto'};
-  padding: 1rem;
+  padding: ${(props) => (props.usage === 'cart' ? '1rem' : '0.5rem')};
   margin-bottom: 1rem;
   width: 100%;
   max-width: 35rem;

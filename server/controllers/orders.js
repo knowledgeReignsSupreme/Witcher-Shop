@@ -32,3 +32,26 @@ exports.getOrder = asyncHandler(async (req, res, next) => {
   //We already get the order from the middleware
   res.status(201).json({ success: true, order: req.order });
 });
+
+// desc     Update order to paid
+// route    get /api/v1/orders/:id/pay
+// access   Private
+exports.updateOrderToPaid = asyncHandler(async (req, res, next) => {
+  const order = req.order;
+
+  order.isPaid = true;
+  order.paidAt = Date.now();
+
+  if (req.order.paymentMethod === 'PayPal') {
+    order.paymentResult = {
+      id: req.body.id,
+      status: req.body.status,
+      update_time: req.body.update_time,
+      email_address: req.body.payer?.email_address,
+    };
+  }
+
+  const updatedOrder = await order.save();
+
+  res.status(201).json({ success: true, order: updatedOrder });
+});

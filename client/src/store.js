@@ -8,7 +8,11 @@ import {
   topProductsReducer,
 } from './Redux/Products/reducers';
 import { cartReducer } from './Redux/Cart/reducers';
-import { orderCreateReducer } from './Redux/Orders/reducers';
+import {
+  orderCreateReducer,
+  orderReducer,
+  orderPayReducer,
+} from './Redux/Orders/reducers';
 import {
   userLoginReducer,
   userRegisterReducer,
@@ -25,6 +29,8 @@ const combinedReducers = combineReducers({
   userRegister: userRegisterReducer,
   userProfile: userProfileReducer,
   orderCreate: orderCreateReducer,
+  order: orderReducer,
+  orderPay: orderPayReducer,
 });
 
 const cartItemsFromStotage = localStorage.getItem('cartItems')

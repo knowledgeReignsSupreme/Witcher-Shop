@@ -125,7 +125,9 @@ export const StyledForm = styled.form`
   div {
     margin-top: 1rem !important;
   }
-
+  input {
+    min-height: 2rem;
+  }
   @media (min-width: 600px) {
     width: 35rem;
     input,

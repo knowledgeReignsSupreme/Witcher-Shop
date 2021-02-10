@@ -12,7 +12,7 @@ import OrderStages from '../Common/OrderStages';
 
 const Login = ({ match }) => {
   let redirectTo = match.params.redirectPath;
-  redirectTo = redirectTo === 'home' ? '/' : redirectTo;
+  redirectTo = redirectTo === 'home' ? '' : redirectTo;
 
   const dispatch = useDispatch();
   const history = useHistory();

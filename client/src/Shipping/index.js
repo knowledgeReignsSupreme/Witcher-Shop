@@ -15,7 +15,7 @@ const Shipping = () => {
   const history = useHistory();
 
   const cart = useSelector((state) => state.cart);
-  const { shippingAddress } = cart;
+  const { shippingAddress, cartItems } = cart;
 
   const userLogin = useSelector((state) => state.userLogin);
   const { loggedUser } = userLogin;
@@ -85,8 +85,10 @@ const Shipping = () => {
   }, [formValidator]);
 
   useEffect(() => {
-    if (!loggedUser) {
+    if (!loggedUser && cartItems.length >= 1) {
       history.push('/login/redirect=shipping');
+    } else if (!loggedUser) {
+      history.push('/cart');
     }
   });
 

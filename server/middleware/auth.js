@@ -37,7 +37,7 @@ exports.isOrderMadeByUser = asyncHandler(async (req, res, next) => {
     return next(new ErrorResponse('Order not found', 404));
   }
 
-  if (order.user !== req.user._id && !req.user.isAdmin) {
+  if (order.user._id.toString() !== req.user._id.toString()) {
     return next(
       new ErrorResponse('You are not allowed to view this order.', 401)
     );

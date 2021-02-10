@@ -1,5 +1,5 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { savePaymentMethod } from '../Redux/Cart/actions';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
@@ -12,15 +12,28 @@ const Payment = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
+  const cart = useSelector((state) => state.cart);
+  const { cartItems } = cart;
+
+  const userLogin = useSelector((state) => state.userLogin);
+  const { loggedUser } = userLogin;
+
   const paymentMethodHandler = (method) => {
     dispatch(savePaymentMethod(method));
     history.push('/order');
   };
 
+  useEffect(() => {
+    if (!loggedUser && cartItems.length >= 1) {
+      history.push('/login/redirect=shipping');
+    } else if (!loggedUser) {
+      history.push('/cart');
+    }
+  });
   return (
     <>
-      <OrderStages currentStage={3} />
       <StyledPayment>
+        <OrderStages currentStage={3} />
         <h3>Choose a payment method:</h3>
         <Button
           link
