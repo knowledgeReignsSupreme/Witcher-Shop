@@ -10,6 +10,8 @@ const {
 const { protect } = require('../middleware/auth');
 const router = express.Router();
 // /api/v1/users
+const ordersRouter = require('./orders');
+router.use('/:userId/orders', ordersRouter);
 
 router.route('/register').post(register);
 router.route('/login').post(login);

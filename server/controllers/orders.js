@@ -55,3 +55,38 @@ exports.updateOrderToPaid = asyncHandler(async (req, res, next) => {
 
   res.status(201).json({ success: true, order: updatedOrder });
 });
+
+// desc     Get order by user
+// route    get /api/v1/users/:id/orders
+// access   Private
+exports.getOrderByUser = asyncHandler(async (req, res, next) => {
+  const paidOrders = await Order.find({
+    user: req.params.userId,
+    isPaid: true,
+  })
+    .select('isPaid, isDelivered createdAt')
+    .sort('CreatedAt');
+
+  const awaitingPaymentOrders = await Order.find({
+    user: req.params.userId,
+    isPaid: false,
+  })
+    .select('isPaid, isDelivered createdAt')
+    .sort('CreatedAt');
+
+  const awaitingDeliveryOrders = await Order.find({
+    user: req.params.userId,
+    isPaid: true,
+    isDelivered: false,
+  })
+    .select('isPaid, isDelivered createdAt')
+    .sort('CreatedAt');
+
+  const data = {
+    paidOrders,
+    awaitingPaymentOrders,
+    awaitingDeliveryOrders,
+  };
+
+  res.status(201).json({ success: true, data });
+});
