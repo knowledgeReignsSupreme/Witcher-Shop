@@ -13,7 +13,7 @@ const morgan = require('morgan');
 const connectDB = require('./config/db');
 const errorHandler = require('./middleware/error');
 
-dotenv.config();
+dotenv.config({ path: '../.env' });
 
 const limiter = rateLimit({
   windowMs: 10 * 60 * 10000,
@@ -39,6 +39,18 @@ app.use(cors());
 
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
+}
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../client/build')));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+  });
+} else {
+  app.get('/', (req, res) => {
+    res.send('API is running..');
+  });
 }
 
 const products = require('./routes/products');
