@@ -9,7 +9,6 @@ const cors = require('cors');
 const app = express();
 const path = require('path');
 const cookieParser = require('cookie-parser');
-const morgan = require('morgan');
 const connectDB = require('./config/db');
 const errorHandler = require('./middleware/error');
 
@@ -18,18 +17,24 @@ dotenv.config({ path: '../.env' });
 //Basic init
 const PORT = process.env.PORT || 5800;
 
+const limiter = rateLimit({
+  windowMs: 10 * 60 * 10000,
+  max: 100,
+  message: 'Too many requests to the server, please try again later',
+});
+
 connectDB();
 
 app.use(express.json());
 app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use(cookieParser());
 
-// app.use(mongoSanitize());
-// app.use(helmet());
-// app.use(xss());
-// app.use(limiter);
-// app.use(hpp());
-// app.use(cors());
+app.use(mongoSanitize());
+app.use(helmet());
+app.use(xss());
+app.use(limiter);
+app.use(hpp());
+app.use(cors());
 
 const products = require('./routes/products');
 const users = require('./routes/users');
