@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getTopProducts } from '../Redux/Products/actions';
+import Helmet from 'react-helmet';
 import { GlobalPageInit } from '../GlobalStyles';
 import styled from 'styled-components';
 import Header from './Header';
@@ -20,6 +21,13 @@ const Home = () => {
 
   return (
     <StyledHome>
+      <Helmet>
+        <title>Witcher Shop | Home</title>
+        <meta
+          name='description'
+          content='Withcer shop home page. Here you can navigate and view top products'
+        />
+      </Helmet>
       <Header />
       <TopProducts
         products={products?.data}

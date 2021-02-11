@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { register } from '../Redux/User/actions';
 import { Link, useHistory } from 'react-router-dom';
+import Helmet from 'react-helmet';
 import styled from 'styled-components';
 import { GlobalPageInit, StyledForm } from '../GlobalStyles';
 import GoogleSignin from '../Common/GoogleSignin';
@@ -11,7 +12,7 @@ import Button from '../Common/Button';
 
 const Register = ({ match }) => {
   let redirectTo = match.params.redirectPath;
-  redirectTo = redirectTo === 'home' ? '/' : redirectTo;
+  redirectTo = redirectTo === 'home' ? '' : redirectTo;
 
   const dispatch = useDispatch();
   const history = useHistory();
@@ -105,6 +106,13 @@ const Register = ({ match }) => {
 
   return (
     <>
+      <Helmet>
+        <title>Witcher Shop | Register</title>
+        <meta
+          name='description'
+          content='Register a new account to witcher shop'
+        />
+      </Helmet>
       {!loggedUser && (
         <StyledRegister>
           <FormStyle onSubmit={registerHandler}>

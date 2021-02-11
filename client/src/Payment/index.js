@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { savePaymentMethod } from '../Redux/Cart/actions';
 import { useHistory } from 'react-router-dom';
+import Helmet from 'react-helmet';
 import styled from 'styled-components';
 import { GlobalPageInit } from '../GlobalStyles';
 import { FaCcStripe, FaPaypal } from 'react-icons/fa';
@@ -32,6 +33,13 @@ const Payment = () => {
   });
   return (
     <>
+      <Helmet>
+        <title>Witcher Shop | Payment option</title>
+        <meta
+          name='description'
+          content='Choose a payment option for the current order'
+        />
+      </Helmet>
       <StyledPayment>
         <OrderStages currentStage={3} />
         <h3>Choose a payment method:</h3>

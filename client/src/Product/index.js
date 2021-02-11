@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getProduct, getRelatedProducts } from '../Redux/Products/actions';
 import { v4 as uuidv4 } from 'uuid';
+import Helmet from 'react-helmet';
 import styled from 'styled-components';
 import { GlobalPageInit } from '../GlobalStyles';
 import Button from '../Common/Button';
@@ -38,6 +39,15 @@ const Product = ({ match }) => {
 
   return (
     <StyledProduct>
+      {currentProduct && (
+        <Helmet>
+          <title>Witcher Shop | {currentProduct.title}</title>
+          <meta
+            name='description'
+            content={`${currentProduct.title} is a ${currentProduct.category}`}
+          />
+        </Helmet>
+      )}
       {isLoading && <Loader size={80} message='Loading product...' />}
       {error && <Error message={error} />}
       {success && !isLoading && !error && (

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../Redux/User/actions';
 import { Link, useHistory } from 'react-router-dom';
+import Helmet from 'react-helmet';
 import styled from 'styled-components';
 import { GlobalPageInit, StyledForm } from '../GlobalStyles';
 import GoogleSignin from '../Common/GoogleSignin';
@@ -38,6 +39,13 @@ const Login = ({ match }) => {
 
   return (
     <>
+      <Helmet>
+        <title>Witcher Shop | Login</title>
+        <meta
+          name='description'
+          content='Log in to your witcher shop account'
+        />
+      </Helmet>
       {!loggedUser && (
         <StyledLogin>
           {redirectTo === 'shipping' && <OrderStages currentStage={1} />}

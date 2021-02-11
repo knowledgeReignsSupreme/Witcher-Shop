@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getOrder, payOrder } from '../Redux/Orders/actions';
 import { clearCart } from '../Redux/Cart/actions';
 import { ORDER_PAY_RESET } from '../Redux/Orders/constants';
+import Helmet from 'react-helmet';
 import { useHistory } from 'react-router-dom';
 import { PayPalButton } from 'react-paypal-button-v2';
 import StripeCheckout from 'react-stripe-checkout';
@@ -93,6 +94,10 @@ const Order = ({ match }) => {
 
   return (
     <StyledOrder>
+      <Helmet>
+        <title>Witcher Shop | Order</title>
+        <meta name='description' content='Watch your order status and data' />
+      </Helmet>
       {isLoading ? (
         <Loader size={80} message='Loading order...' />
       ) : error ? (

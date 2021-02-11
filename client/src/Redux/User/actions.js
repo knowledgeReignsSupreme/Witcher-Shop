@@ -120,6 +120,8 @@ export const logout = () => async (dispatch) => {
   });
   await axios.post(`/api/v1/users/logout`);
   localStorage.removeItem('loggedUser');
+  localStorage.removeItem('shippingAddress');
+  localStorage.removeItem('paymentMethod');
 };
 
 export const getUserProfile = () => async (dispatch) => {

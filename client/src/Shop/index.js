@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProducts } from '../Redux/Products/actions';
 import { useHistory } from 'react-router-dom';
+import Helmet from 'react-helmet';
 import styled from 'styled-components';
 import { GlobalPageInit, colorsVariables } from '../GlobalStyles';
 import Loader from '../Common/Loader';
@@ -58,6 +59,13 @@ const Shop = ({ match }) => {
 
   return (
     <>
+      <Helmet>
+        <title>Witcher Shop | Shop</title>
+        <meta
+          name='description'
+          content='Browse endless witcher products in order to bring the best witcher out of you in the hunt'
+        />
+      </Helmet>
       {isLoading && <Loader size={80} />}
       {error && <Error message={error} />}
       {success && !isLoading && (

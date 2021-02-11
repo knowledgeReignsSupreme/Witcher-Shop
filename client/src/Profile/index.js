@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserProfile, getUserOrders } from '../Redux/User/actions';
 import { useHistory } from 'react-router-dom';
+import Helmet from 'react-helmet';
 import styled from 'styled-components';
 import { GlobalPageInit } from '../GlobalStyles';
 import Loader from '../Common/Loader';
@@ -48,6 +49,15 @@ const Profile = () => {
 
   return (
     <StyledProfile>
+      {userInfo && (
+        <Helmet>
+          <title>Witcher Shop | {userInfo.name}</title>
+          <meta
+            name='description'
+            content='View your profile details and orders you have placed'
+          />
+        </Helmet>
+      )}
       {isLoading ? (
         <Loader size={80} message='Loading profile...' />
       ) : userOrdersError ? (

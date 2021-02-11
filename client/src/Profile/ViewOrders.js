@@ -20,13 +20,13 @@ const ViewOrders = ({ orders, setCurrentViewedOrder, currentViewedOrder }) => {
           onClick={() => setCurrentViewedOrder(orders?.awaitingDeliveryOrders)}
         >
           <FaBoxOpen />
-          <p>To be delivered</p>
+          <p>To be shipped</p>
         </OrderType>
         <OrderType
           onClick={() => setCurrentViewedOrder(orders?.deliveredOrders)}
         >
           <FaPlane />
-          <p>Delivered</p>
+          <p>Shipped</p>
         </OrderType>
       </Orders>
       {currentViewedOrder === '' ? (

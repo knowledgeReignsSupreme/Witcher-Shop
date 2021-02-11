@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { saveShippingAddress } from '../Redux/Cart/actions';
 import { useHistory } from 'react-router-dom';
+import Helmet from 'react-helmet';
 import { v4 as uuidv4 } from 'uuid';
 import styled from 'styled-components';
 import { GlobalPageInit, StyledForm, colorsVariables } from '../GlobalStyles';
@@ -94,6 +95,13 @@ const Shipping = () => {
 
   return (
     <StyledShipping>
+      <Helmet>
+        <title>Witcher Shop | Shipping Details</title>
+        <meta
+          name='description'
+          content='Save your shipping details in order to place a new order'
+        />
+      </Helmet>
       <OrderStages currentStage={2} />
       <ShippingForm onSubmit={saveAddressHandler}>
         <h3>Shipping details:</h3>

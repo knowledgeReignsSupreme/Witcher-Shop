@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { createOrder } from '../Redux/Orders/actions';
+import { clearCart } from '../Redux/Cart/actions';
 import { useHistory } from 'react-router-dom';
+import Helmet from 'react-helmet';
 import { v4 as uuidv4 } from 'uuid';
 import styled from 'styled-components';
 import { GlobalPageInit } from '../GlobalStyles';
@@ -42,6 +44,7 @@ const PlaceOrder = () => {
     if (success) {
       history.push(`/order/${createdOrder._id}`);
       dispatch({ type: 'ORDER_CREATE_RESET' });
+      dispatch(clearCart());
     }
   }, [success, createdOrder?._id, history, dispatch]);
 
@@ -53,6 +56,10 @@ const PlaceOrder = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Witcher Shop | Place Order</title>
+        <meta name='description' content='Place a new order' />
+      </Helmet>
       {cartItems.length <= 0 ? (
         <EmptyCart />
       ) : (

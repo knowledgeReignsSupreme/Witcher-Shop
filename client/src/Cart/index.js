@@ -4,6 +4,7 @@ import { removeFromCart, addToCart } from '../Redux/Cart/actions';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { Link } from 'react-router-dom';
+import Helmet from 'react-helmet';
 import styled from 'styled-components';
 import { GlobalPageInit } from '../GlobalStyles';
 import ProductRow from '../Common/ProductRow';
@@ -36,6 +37,13 @@ const Cart = () => {
 
   return (
     <StyledCart>
+      <Helmet>
+        <title>Witcher Shop | Cart</title>
+        <meta
+          name='description'
+          content='View and edit the items in your shopping cart'
+        />
+      </Helmet>
       {cartItems <= 0 ? (
         <EmptyCart />
       ) : (

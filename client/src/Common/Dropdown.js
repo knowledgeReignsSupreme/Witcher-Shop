@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { logout } from '../Redux/User/actions';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { colorsVariables, slideDown } from '../GlobalStyles';
 import { FaSignOutAlt, FaUser } from 'react-icons/fa';
@@ -48,9 +48,11 @@ const Dropdown = ({ toggleOnClick }) => {
                 <FaUser /> Profile
               </p>
             </NavLink>
-            <p onClick={signOutHandler}>
-              <FaSignOutAlt /> Sign out
-            </p>
+            <NavLink to='/register/redirect=home'>
+              <p onClick={signOutHandler}>
+                <FaSignOutAlt /> Sign out
+              </p>
+            </NavLink>
           </SecNav>
         ) : (
           <SecNav onClick={() => toggleOnClick(false)}>
@@ -58,9 +60,9 @@ const Dropdown = ({ toggleOnClick }) => {
               <p>Sign up</p>
             </NavLink>
 
-            <NavLink to='/login/redirect=home'>
+            <Link to=''>
               <p>Sign in</p>
-            </NavLink>
+            </Link>
           </SecNav>
         )}
       </StyledDropdown>
