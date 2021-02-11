@@ -9,7 +9,7 @@ const sendTokenResponse = (user, statusCode, res) => {
   };
 
   if (process.env.NODE_ENV === 'production') {
-    option.secure = true;
+    options.secure = true;
   }
 
   res
