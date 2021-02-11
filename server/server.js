@@ -31,6 +31,15 @@ app.use(cookieParser());
 // app.use(hpp());
 // app.use(cors());
 
+const products = require('./routes/products');
+const users = require('./routes/users');
+const orders = require('./routes/orders');
+
+app.use('/api/v1/products', products);
+app.use('/api/v1/users', users);
+app.use('/api/v1/orders', orders);
+app.use(errorHandler);
+
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
 
@@ -40,14 +49,5 @@ if (process.env.NODE_ENV === 'production') {
     );
   });
 }
-
-const products = require('./routes/products');
-const users = require('./routes/users');
-const orders = require('./routes/orders');
-
-app.use('/api/v1/products', products);
-app.use('/api/v1/users', users);
-app.use('/api/v1/orders', orders);
-app.use(errorHandler);
 
 app.listen(PORT, () => console.log(`Server is listening on port ${PORT}`));
