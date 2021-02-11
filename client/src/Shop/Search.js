@@ -43,6 +43,10 @@ const StyledSearch = styled.div`
   flex-direction: column;
   align-content: center;
   min-width: max-content;
+
+  input {
+    width: 13.5rem;
+  }
 `;
 
 const StyledButtons = styled.div`
