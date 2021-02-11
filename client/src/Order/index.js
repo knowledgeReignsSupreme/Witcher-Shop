@@ -166,16 +166,14 @@ const Order = ({ match }) => {
                       />
                     </>
                   ) : (
-                    stripeCheckout && (
-                      <StripeCheckout
-                        token={stripeSuccessHandler}
-                        stripeKey={publishableKey}
-                        amount={currentOrder.totalPrice * 100}
-                        currency='USD'
-                        name={`Order no. ${currentOrder._id}`}
-                        email={loggedUser.email}
-                      />
-                    )
+                    <StripeCheckout
+                      token={stripeSuccessHandler}
+                      stripeKey={publishableKey}
+                      amount={currentOrder.totalPrice * 100}
+                      currency='USD'
+                      name={`Order no. ${currentOrder._id}`}
+                      email={loggedUser.email}
+                    />
                   )}
                 </>
               )}
