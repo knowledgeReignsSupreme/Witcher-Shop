@@ -50,9 +50,9 @@ export const register = (name, email, password) => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: USER_REGISTER_FAIL,
-      payload: error.response.data.err
-        ? error.response.data.err
-        : error.message,
+      payload: error?.response?.data?.err
+        ? error?.response?.data?.err
+        : error?.message,
     });
   }
 };
@@ -80,9 +80,9 @@ export const login = (email, password) => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: USER_LOGIN_FAIL,
-      payload: error.response.data.err
-        ? error.response.data.err
-        : error.message,
+      payload: error?.response?.data?.err
+        ? error?.response?.data?.err
+        : error?.message,
     });
   }
 };
@@ -107,9 +107,9 @@ export const googleLogin = (tokenId) => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: USER_GOOGLE_LOGIN_FAIL,
-      payload: error.response.data.err
-        ? error.response.data.err
-        : error.message,
+      payload: error?.response?.data?.err
+        ? error?.response?.data?.err
+        : error?.message,
     });
   }
 };
@@ -141,9 +141,9 @@ export const getUserProfile = () => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: USER_PROFILE_FAIL,
-      payload: error.response.data.err
-        ? error.response.data.err
-        : error.message,
+      payload: error?.response?.data?.err
+        ? error?.response?.data?.err
+        : error?.message,
     });
   }
 };
@@ -165,9 +165,9 @@ export const getUserOrders = (userId) => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: USER_GET_ORDERS_FAIL,
-      payload: error.response.data.err
-        ? error.response.data.err
-        : error.message,
+      payload: error?.response?.data?.err
+        ? error?.response?.data?.err
+        : error?.message,
     });
   }
 };

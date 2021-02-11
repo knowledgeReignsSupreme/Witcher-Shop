@@ -34,9 +34,9 @@ export const createOrder = (order) => async (dispatch, getState) => {
   } catch (error) {
     dispatch({
       type: ORDER_CREATE_FAIL,
-      payload: error.response.data.err
-        ? error.response.data.err
-        : error.message,
+      payload: error?.response?.data?.err
+        ? error?.response?.data?.err
+        : error?.message,
     });
   }
 };
@@ -58,9 +58,9 @@ export const getOrder = (orderId) => async (dispatch, getState) => {
   } catch (error) {
     dispatch({
       type: ORDER_GET_FAIL,
-      payload: error.response.data.err
-        ? error.response.data.err
-        : error.message,
+      payload: error?.response?.data?.err
+        ? error?.response?.data?.err
+        : error?.message,
     });
   }
 };
@@ -87,9 +87,9 @@ export const payOrder = (orderId, paymentResult = '') => async (
   } catch (error) {
     dispatch({
       type: ORDER_PAY_FAIL,
-      payload: error.response.data.err
-        ? error.response.data.err
-        : error.message,
+      payload: error?.response?.data?.err
+        ? error?.response?.data?.err
+        : error?.message,
     });
   }
 };

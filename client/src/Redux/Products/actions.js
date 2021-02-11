@@ -31,9 +31,9 @@ export const getProducts = (
   } catch (error) {
     dispatch({
       type: PRODUCTS_GET_FAIL,
-      payload: error.response.data.err
-        ? error.response.data.err
-        : error.message,
+      payload: error?.response?.data?.err
+        ? error?.response?.data?.err
+        : error?.message,
     });
   }
 };
@@ -48,9 +48,9 @@ export const getProduct = (productId) => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: PRODUCT_GET_FAIL,
-      payload: error.response.data.err
-        ? error.response.data.err
-        : error.message,
+      payload: error?.response?.data?.err
+        ? error?.response?.data?.err
+        : error?.message,
     });
   }
 };
@@ -65,9 +65,9 @@ export const getRelatedProducts = (productId) => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: RELATED_PRODUCTS_GET_FAIL,
-      payload: error.response.data.err
-        ? error.response.data.err
-        : error.message,
+      payload: error?.response?.data?.err
+        ? error?.response?.data?.err
+        : error?.message,
     });
   }
 };
@@ -82,9 +82,9 @@ export const getTopProducts = () => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: TOP_PRODUCTS_GET_FAIL,
-      payload: error.response.data.err
-        ? error.response.data.err
-        : error.message,
+      payload: error?.response?.data?.err
+        ? error?.response?.data?.err
+        : error?.message,
     });
   }
 };
