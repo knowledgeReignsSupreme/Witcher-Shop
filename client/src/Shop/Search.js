@@ -42,6 +42,7 @@ const StyledSearch = styled.div`
   display: flex;
   flex-direction: column;
   align-content: center;
+  min-width: max-content;
 `;
 
 const StyledButtons = styled.div`
@@ -49,6 +50,9 @@ const StyledButtons = styled.div`
   justify-content: space-between;
   width: 100%;
   margin-top: 0.5rem;
+  div + div {
+    margin-left: 0.5rem;
+  }
 `;
 
 export default Search;

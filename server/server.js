@@ -7,7 +7,7 @@ const cookieParser = require('cookie-parser');
 const connectDB = require('./config/db');
 const errorHandler = require('./middleware/error');
 
-dotenv.config({ path: '../.env' });
+dotenv.config();
 
 //Basic init
 const PORT = process.env.PORT || 5800;
